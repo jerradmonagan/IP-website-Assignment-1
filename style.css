@@ -2,5 +2,7 @@ body{background-image: url(images/brick-back.jpg);background-repeat: repeat; mar
 h1,h2,h3,h4,h5,h6{color:rgb(0, 153, 51); font-family:"Lato", sans-serif;}
 p{color:rgb(0, 153, 51);font-family:"Lato","sans-serif";}
 a:hover{background-color:yellow;font-size: 150%;} 
+a{color: red;}
 hr{border: 0;align:center;height:25px;background-image: url(images/pacman.png);background-repeat: repeat;}
 table{color:rgb(0, 153, 51);}
+ul{list-style-type: square; list-style-position: outside;}
