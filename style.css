@@ -4,15 +4,16 @@ body{
    margin: 100px 150px 100px 80px;
  }
 h1,h2,h3,h4,h5,h6{
-  color:rgb(0, 153, 51);
+  color:white;
   font-family:"Lato", sans-serif;
+  text-align: center;
 }
 p{
-  color:rgb(0, 153, 51);
+  color:white;
   font-family:"Lato","sans-serif";
 }
 a{
-  color: red;
+  color: rgb(0, 102, 255);
 }
 a:hover{
   background-color:yellow;
@@ -25,9 +26,16 @@ hr{
   background-repeat: repeat;
 }
 table{
-  color:rgb(0, 153, 51);
+  color:white;
 }
 ul{
   list-style-type: square;
-   list-style-position: outside;
+  list-style-position: inside;
+  text-align:center;
+}
+.course-table{
+  border: 1px solid white;
+  border-collapse: collapse;
+  color:white;
+  text-align: center;
 }
