@@ -22,8 +22,7 @@ a:hover{
 hr{
   border: 0;
   align:center;height:25px;
-  background-image: url(images/pacman.png);
-  background-repeat: repeat;
+  background-color:red;
 }
 table{
   color:white;
