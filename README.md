@@ -6,7 +6,7 @@ After completing the assignment, you are to submit a file containing a link to t
  
 Folder Structure
 http://server /~Nnumber/cop4813/index.html - Initial ePortfolio web page will be used to link to subsequent assignments.
-http:// server /~Nnumber/cop4813/assign1 /index.html - The location for assignment 1 – the “About Me” web page.
+http:// server /~N number/cop4813/assign1 /index.html - The location for assignment 1 – the “About Me” web page.
 http:// server /~Nnumber/cop4813/ style.css - The location for the style sheet for your ePortfolio.
  
 Assignment Description
