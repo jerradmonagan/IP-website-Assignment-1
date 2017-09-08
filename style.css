@@ -54,4 +54,30 @@ ul{
   border-collapse: collapse;
   color:white;
   text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+.american-grill-drinks{
+  border: 1px solid white;
+  border-collapse: collapse;
+  color:white;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+.american-grill-total{
+  border: 1px solid white;
+  border-collapse: collapse;
+  color:white;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+.american-grill-btn{
+  border: 1px solid white;
+  border-collapse: collapse;
+  color:white;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
 }

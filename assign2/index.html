@@ -12,7 +12,7 @@
           <th><img src="../images/pizza.jpg" alt="Pizza"></th>  <th><img src="../images/hotdog.jpg" alt="hotdog"></th>  <th><img src="../images/mac&cheese.jpg" alt="Mac and cheese"></th>
       </tr>
       <tr>
-          <td>Pizza</td><td>Hot Dog</td><td>Mac and Cheese</td>
+          <td>Pizza $10.00</td><td>Hot Dog $4.50</td><td>Mac and Cheese $3.50</td>
       </tr>
       <tr>
           <td><input type="checkbox" name="pizza" value="10"></td><td><input type="checkbox" name="hotdog" value="4.5"></td><td><input type="checkbox" name="macAndCheese" value="3.5"></td>
@@ -21,19 +21,59 @@
           <th><img src="../images/fries.jpg" alt="French Fries"></th>  <th><img src="../images/hamburg.jpg" alt="Hamburger"></th>  <th><img src="../images/applepie.jpg" alt="Apple Pie"></th>
       </tr>
       <tr>
-          <td>French Fries</td><td>Hamburger</td><td>Apple Pie</td>
+          <td>French Fries $1.50</td><td>Hamburger $5.00</td><td>Apple Pie $2.25</td>
       </tr>
       <tr>
           <td><input type="checkbox" name="frenchFries" value="1.5"></td><td><input type="checkbox" name="hamburger" value="5"></td><td><input type="checkbox" name="applePie" value="2.25"></td>
       </tr>
-    </table>
-    <table  class="american-grill-discount">
-        <form>
-          <tr><th><input type="radio" name="discount" value="0" checked> None<th></tr>
-          <tr><th><input type="radio" name="discount" value=".10"> Senior</th></tr>
-          <tr><th><input type="radio" name="discount" value=".05"> Student</th></tr>
-          <tr><th><input type="radio" name="discount" value=".15"> Miltary</th></tr>
-        </form>
+      <tr><td>Customer Name: <input type="text" name="cName"/></td>
+        <td>  <h2>Discounts</h2>
+        <table  class="american-grill-discount">
+            <form>
+              <tr><th><input type="radio" name="discount" value="0" checked> None<th></tr>
+              <tr><th><input type="radio" name="discount" value=".10"> Senior</th></tr>
+              <tr><th><input type="radio" name="discount" value=".05"> Student</th></tr>
+              <tr><th><input type="radio" name="discount" value=".15"> Miltary</th></tr>
+            </form>
+        </table></td>
+        <td>
+          <h2>Drinks</h2>
+          <table class="american-grill-drinks">
+            <form>
+              <tr><th><select name="Drinks">
+              <option value="coke">Coke</option>
+              <option value="sprite">sprite</option>
+              <option value="coffee">coffee</option>
+              <option value="water">Water</option>
+              </select></th></tr>
+            </form>
+          </table>
+        </td>
+        <tr>
+          <td></td>
+          <td>
+            <h2>Totals</h2>
+            <table class="american-grill-total">
+              <form>
+                <tr><th>Sub total: <input type="text" id="subTotal" readonly="readonly"/></th></tr>
+                <tr><th>Taxes: <input type="text" id="taxes" readonly="readonly" /></th></tr>
+                <tr><th>Total: <input type="text" id="total" readonly="readonly"/></th></tr>
+              </form>
+            </table>
+          </td>
+          <td></td>
+        </tr>
+      </td>
+      <tr>
+      <td></td>
+      <td>
+        <table class="american-grill-btn">
+            <form action="../index.html">
+              <tr><th><input type="submit"></th></tr>
+            </form>
+      </td>
+      <td></td>
+    </tr>
     </table>
   </body>
 </html>
