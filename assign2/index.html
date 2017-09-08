@@ -5,11 +5,22 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <script type="text/javascript">
-      //calculates total of all menu items before tax and discounts
-      function addMenu()
+      //calculates total of all menu items before tax and discounts then
+      //takes subtotal and multiplies times the discount, if any and returns total before taxes
+      //and retuns total to display for customer to pay
+      function calculateOrder()
       {
-        var subTotal =0;
+        var subTotal = 0;
         var subTotalText=  document.getElementById("subTotalText");
+        var discountTotalText= document.getElementById("discountTotalText");
+        var taxesText = document.getElementById("taxesText");
+        var totalText = document.getElementById("totalText");
+        var discount = document.forms[0];
+        var i;
+        var discountTotal =0;
+        var totalBeforeTaxes=0;
+        var tax=0;
+        var total=0;
         if (pizza.checked)
           subTotal= parseFloat(document.getElementById("pizza").value)+ parseFloat(subTotal);
         if (hotdog.checked)
@@ -23,6 +34,26 @@
         if (applePie.checked)
           subTotal= parseFloat(document.getElementById("applePie").value)+ parseFloat(subTotal);
         subTotalText.value=parseFloat(subTotal);
+        //start calculating discount
+        for (i = 0; i < discount.length; i++)
+        {
+          if (discount[i].checked)
+          {
+            discountTotal = parseFloat(subTotal)* parseFloat(discount[i].value);
+          }//end if
+        }//end for
+        discountTotalText.value=parseFloat(discountTotal);
+
+        //calculate total before taxes by subtracting the dicount from the subTotal
+        totalBeforeTaxes = parseFloat(subTotal)- parseFloat(discountTotal);
+
+        //calculate price of taxes at 7%
+        tax = parseFloat(totalBeforeTaxes)*.07;
+        taxesText.value =parseFloat(tax);
+
+        //calculate total that customer has to pay by adding taxes to total before tax
+        total = parseFloat(tax)+parseFloat(totalBeforeTaxes);
+        totalText.value = parseFloat(total);
       }//end addMenu function
     </script>
   </head>
@@ -77,8 +108,9 @@
             <table class="american-grill-total">
               <form>
                 <tr><th>Sub total: <input type="text" name ="subTotalText" id="subTotalText" readonly="true"/></th></tr>
-                <tr><th>Taxes: <input type="text" name="taxes" id="taxes" readonly="true" /></th></tr>
-                <tr><th>Total: <input type="text" name="total" id="total" readonly="true"/></th></tr>
+                <tr><th>Discount total: <input type="text" name ="discountTotalText" id="discountTotalText" readonly="true"/></th></tr>
+                <tr><th>Taxes: <input type="text" name="taxesText" id="taxesText" readonly="true" /></th></tr>
+                <tr><th>Total: <input type="text" name="totalText" id="totalText" readonly="true"/></th></tr>
               </form>
             </table>
           </td>
@@ -89,15 +121,10 @@
       <td></td>
       <td>
         <table class="american-grill-btn">
-            <form action="../index.html">
-              <tr><th><input type="submit"></th></tr>
-            </form>
+          <tr><th>  <button type="button" onclick="calculateOrder()">Calculate Order</button></th></tr>
       </td>
       <td></td>
     </tr>
     </table>
-    <button type="button" onclick="addMenu()">Click me to display subtotal</button>
-    <p id ="testP">
-    </p>
   </body>
 </html>
