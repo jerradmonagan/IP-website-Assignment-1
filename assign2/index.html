@@ -4,6 +4,27 @@
     <title>COP 4813: Assignment 2</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../style.css">
+    <script type="text/javascript">
+      //calculates total of all menu items before tax and discounts
+      function addMenu()
+      {
+        var subTotal =0;
+        var subTotalText=  document.getElementById("subTotalText");
+        if (pizza.checked)
+          subTotal= parseFloat(document.getElementById("pizza").value)+ parseFloat(subTotal);
+        if (hotdog.checked)
+          subTotal= parseFloat(document.getElementById("hotdog").value)+ parseFloat(subTotal);
+        if (macAndCheese.checked)
+          subTotal= parseFloat(document.getElementById("macAndCheese").value)+ parseFloat(subTotal);
+        if (frenchFries.checked)
+          subTotal= parseFloat(document.getElementById("frenchFries").value)+ parseFloat(subTotal);
+        if (hamburger.checked)
+          subTotal= parseFloat(document.getElementById("hamburger").value)+ parseFloat(subTotal);
+        if (applePie.checked)
+          subTotal= parseFloat(document.getElementById("applePie").value)+ parseFloat(subTotal);
+        subTotalText.value=parseFloat(subTotal);
+      }//end addMenu function
+    </script>
   </head>
   <body>
     <h1>American Grill</h1>
@@ -15,7 +36,7 @@
           <td>Pizza $10.00</td><td>Hot Dog $4.50</td><td>Mac and Cheese $3.50</td>
       </tr>
       <tr>
-          <td><input type="checkbox" name="pizza" value="10"></td><td><input type="checkbox" name="hotdog" value="4.5"></td><td><input type="checkbox" name="macAndCheese" value="3.5"></td>
+          <td><input type="checkbox" id="pizza" value="10"></td><td><input type="checkbox" id="hotdog" value="4.5"></td><td><input type="checkbox" id="macAndCheese" value="3.5"></td>
       </tr>
       <tr>
           <th><img src="../images/fries.jpg" alt="French Fries"></th>  <th><img src="../images/hamburg.jpg" alt="Hamburger"></th>  <th><img src="../images/applepie.jpg" alt="Apple Pie"></th>
@@ -24,7 +45,7 @@
           <td>French Fries $1.50</td><td>Hamburger $5.00</td><td>Apple Pie $2.25</td>
       </tr>
       <tr>
-          <td><input type="checkbox" name="frenchFries" value="1.5"></td><td><input type="checkbox" name="hamburger" value="5"></td><td><input type="checkbox" name="applePie" value="2.25"></td>
+          <td><input type="checkbox" id="frenchFries" value="1.5"></td><td><input type="checkbox" id="hamburger" value="5"></td><td><input type="checkbox" id="applePie" value="2.25"></td>
       </tr>
       <tr><td>Customer Name: <input type="text" name="cName"/></td>
         <td>  <h2>Discounts</h2>
@@ -55,9 +76,9 @@
             <h2>Totals</h2>
             <table class="american-grill-total">
               <form>
-                <tr><th>Sub total: <input type="text" id="subTotal" readonly="readonly"/></th></tr>
-                <tr><th>Taxes: <input type="text" id="taxes" readonly="readonly" /></th></tr>
-                <tr><th>Total: <input type="text" id="total" readonly="readonly"/></th></tr>
+                <tr><th>Sub total: <input type="text" name ="subTotalText" id="subTotalText" readonly="true"/></th></tr>
+                <tr><th>Taxes: <input type="text" name="taxes" id="taxes" readonly="true" /></th></tr>
+                <tr><th>Total: <input type="text" name="total" id="total" readonly="true"/></th></tr>
               </form>
             </table>
           </td>
@@ -75,5 +96,8 @@
       <td></td>
     </tr>
     </table>
+    <button type="button" onclick="addMenu()">Click me to display subtotal</button>
+    <p id ="testP">
+    </p>
   </body>
 </html>
