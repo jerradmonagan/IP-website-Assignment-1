@@ -21,19 +21,54 @@
         var totalBeforeTaxes=0;
         var tax=0;
         var total=0;
+        var registerText="";
+        //check items from menu add price to subtotal and then output them to register window
         if (pizza.checked)
+        {
           subTotal= parseFloat(document.getElementById("pizza").value)+ parseFloat(subTotal);
+          registerText = "pizza" +" "+registerText;
+          document.getElementById("register").innerHTML = registerText;
+        }//end if
         if (hotdog.checked)
+        {
           subTotal= parseFloat(document.getElementById("hotdog").value)+ parseFloat(subTotal);
+          registerText = "hotdog" +" "+registerText;
+          document.getElementById("register").innerHTML = registerText;
+        }//end if
         if (macAndCheese.checked)
+        {
           subTotal= parseFloat(document.getElementById("macAndCheese").value)+ parseFloat(subTotal);
+          registerText = "Mac and Cheese" +" "+registerText;
+          document.getElementById("register").innerHTML = registerText;
+        }//end if
         if (frenchFries.checked)
+        {
           subTotal= parseFloat(document.getElementById("frenchFries").value)+ parseFloat(subTotal);
+          registerText = "French Fries" +" "+registerText;
+          document.getElementById("register").innerHTML = registerText;
+        }//end if
         if (hamburger.checked)
+        {
           subTotal= parseFloat(document.getElementById("hamburger").value)+ parseFloat(subTotal);
+          registerText = "Hamburger" +" "+registerText;
+          document.getElementById("register").innerHTML = registerText;
+        }//end if
         if (applePie.checked)
+        {
           subTotal= parseFloat(document.getElementById("applePie").value)+ parseFloat(subTotal);
+          registerText = "Apple Pie" +" "+registerText;
+          document.getElementById("register").innerHTML = registerText;
+        }//end if
+
+        //add drinks to register output
+        var drinksText=document.getElementById("drinks");
+        var drinksUser=drinksText.options[drinksText.selectedIndex].text;
+        registerText = drinksUser+" "+registerText;
+        document.getElementById("register").innerHTML = registerText;
+
+        //print the subTotal
         subTotalText.value=parseFloat(subTotal);
+
         //start calculating discount
         for (i = 0; i < discount.length; i++)
         {
@@ -117,7 +152,7 @@
           <h2>Drinks</h2>
           <table class="american-grill-drinks">
             <form>
-              <tr><th><select name="Drinks">
+              <tr><th><select id="drinks">
               <option value="coke">Coke</option>
               <option value="sprite">sprite</option>
               <option value="coffee">coffee</option>
@@ -140,7 +175,7 @@
               </form>
             </table>
           </td>
-          <td></td>
+          <td><h2>Register Output</h2><p id="register"></p></td>
         </tr>
       </td>
       <tr>

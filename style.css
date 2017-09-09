@@ -42,8 +42,7 @@ ul{
   margin-right: auto;
 }
 .american-grill-items{
-  border: 1px solid white;
-  border-collapse: collapse;
+  border: 4px solid white;
   color:white;
   text-align: center;
   margin-left: auto;
@@ -51,7 +50,6 @@ ul{
 }
 .american-grill-discount{
   border: 1px solid white;
-  border-collapse: collapse;
   color:white;
   text-align: left;
   margin-left: auto;
