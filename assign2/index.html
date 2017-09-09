@@ -54,7 +54,28 @@
         //calculate total that customer has to pay by adding taxes to total before tax
         total = parseFloat(tax)+parseFloat(totalBeforeTaxes);
         totalText.value = parseFloat(total);
+
+        //calls checkEmail
+        checkEmail()
       }//end addMenu function
+
+      //check email to verify it is correct format and display on order
+      function checkEmail()
+      {
+        var email = document.getElementById('txtEmail');
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!filter.test(email.value))
+        {
+          alert('Please provide a valid email address');
+          email.focus;
+          return false;
+        }//end if
+        else
+        {
+          document.getElementById("emailText").innerHTML=email.value;
+        }//end else
+      }//end checkEmail()
+
     </script>
   </head>
   <body>
@@ -78,7 +99,7 @@
       <tr>
           <td><input type="checkbox" id="frenchFries" value="1.5"></td><td><input type="checkbox" id="hamburger" value="5"></td><td><input type="checkbox" id="applePie" value="2.25"></td>
       </tr>
-      <tr><td>Customer Name: <input type="text" name="cName"/></td>
+      <tr><td>Customer Name: <input type="text" id="txtEmail" name="txtEmail"/></td>
         <td>  <h2>Discounts</h2>
         <table  class="american-grill-discount">
             <form>
@@ -111,6 +132,7 @@
                 <tr><th>Discount total: <input type="text" name ="discountTotalText" id="discountTotalText" readonly="true"/></th></tr>
                 <tr><th>Taxes: <input type="text" name="taxesText" id="taxesText" readonly="true" /></th></tr>
                 <tr><th>Total: <input type="text" name="totalText" id="totalText" readonly="true"/></th></tr>
+                <tr><th>Customer Email:<p id ="emailText"></p></th></tr>
               </form>
             </table>
           </td>
@@ -125,6 +147,6 @@
       </td>
       <td></td>
     </tr>
-    </table>
+  </table>
   </body>
 </html>
