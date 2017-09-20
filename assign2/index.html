@@ -119,7 +119,7 @@
   </head>
   <body>
     <h1>American Grill</h1>
-    <table  class="american-grill-items">
+    <table class="american-grill-items">
       <tr>
           <th><img src="../images/pizza.jpg" alt="Pizza"></th>  <th><img src="../images/hotdog.jpg" alt="hotdog"></th>  <th><img src="../images/mac&cheese.jpg" alt="Mac and cheese"></th>
       </tr>
@@ -140,57 +140,56 @@
       </tr>
       <tr><td>Customer Email: <input type="text" id="txtEmail" name="txtEmail"/></td>
         <td>  <h2>Discounts</h2>
-        <table  class="american-grill-discount">
-            <form>
-              <tr><th><input type="radio" name="discount" value="0" checked> None<th></tr>
-              <tr><th><input type="radio" name="discount" value=".10"> Senior</th></tr>
-              <tr><th><input type="radio" name="discount" value=".05"> Student</th></tr>
-              <tr><th><input type="radio" name="discount" value=".15"> Miltary</th></tr>
-            </form>
-        </table></td>
+        <form>
+        <table class="american-grill-discount">
+          <tr><th><input type="radio" name="discount" value="0" checked> None</th></tr>
+          <tr><th><input type="radio" name="discount" value=".10"> Senior</th></tr>
+          <tr><th><input type="radio" name="discount" value=".05"> Student</th></tr>
+          <tr><th><input type="radio" name="discount" value=".15"> Miltary</th></tr>
+        </table></form></td>
         <td>
           <h2>Drinks</h2>
+          <form>
           <table class="american-grill-drinks">
-            <form>
               <tr><th><select id="drinks">
               <option value="coke">Coke</option>
               <option value="sprite">Sprite</option>
               <option value="coffee">Coffee</option>
               <option value="water">Water</option>
               </select></th></tr>
-            </form>
           </table>
+          </form>
         </td>
         <tr>
           <td></td>
           <td>
             <h2>Totals</h2>
+            <form>
             <table class="american-grill-total">
-              <form>
-                <tr><th>Sub total: <input type="text" name ="subTotalText" id="subTotalText" readonly="true"/></th></tr>
-                <tr><th>Discount total: <input type="text" name ="discountTotalText" id="discountTotalText" readonly="true"/></th></tr>
-                <tr><th>Taxes: <input type="text" name="taxesText" id="taxesText" readonly="true" /></th></tr>
-                <tr><th>Total: <input type="text" name="totalText" id="totalText" readonly="true"/></th></tr>
+                <tr><th>Sub total: <input type="text" name ="subTotalText" id="subTotalText" readonly="readonly"></th></tr>
+                <tr><th>Discount total: <input type="text" name ="discountTotalText" id="discountTotalText" readonly="readonly"></th></tr>
+                <tr><th>Taxes: <input type="text" name="taxesText" id="taxesText" readonly="readonly"></th></tr>
+                <tr><th>Total: <input type="text" name="totalText" id="totalText" readonly="readonly"></th></tr>
                 <tr><th>Customer Email:<p id ="emailText"></p></th></tr>
-              </form>
             </table>
+            </form>
           </td>
           <td><h2>Register Output</h2><p id="register"></p></td>
         </tr>
-      </td>
       <tr>
-      <td></td>
+      <td>&nbsp;</td>
       <td>
         <table class="american-grill-btn">
           <tr><th>  <button type="button" onclick="calculateOrder()">Calculate Order</button></th></tr>
-      </td>
-      <td></td>
-    </tr>
+        </table>
+      <td>&nbsp;</td>
+      </tr>
+
   </table>
-  <p id ="errors"></p>
-  <div>
-    <a href ="../index.html">ePortfolio</a>
+  <div class="link-center">
+    <p id ="errors"></p>
+    <a href ="../index.html">ePortfolio</a><br />
+    <a href="../images/assign2.jpg">Flow Chart</a>
   </div>
-  <a href="../images/assign2.jpg">Flow Chart</a>
   </body>
 </html>
