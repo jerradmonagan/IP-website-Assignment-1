@@ -114,7 +114,13 @@
           document.getElementById('txtEmail').style.background="white";
         }//end else
       }//end checkEmail()
-
+      //clears all forms
+      function clearForms()
+      {
+        document.getElementById("myForm").reset();
+        document.getElementById("myForm1").reset();
+        document.getElementById("myForm2").reset();
+      }//end clearForms
     </script>
   </head>
   <body>
@@ -140,7 +146,7 @@
       </tr>
       <tr><td>Customer Email: <input type="text" id="txtEmail" name="txtEmail"/></td>
         <td>  <h2>Discounts</h2>
-        <form>
+        <form id ="myForm">
         <table class="american-grill-discount">
           <tr><th><input type="radio" name="discount" value="0" checked> None</th></tr>
           <tr><th><input type="radio" name="discount" value=".10"> Senior</th></tr>
@@ -149,7 +155,7 @@
         </table></form></td>
         <td>
           <h2>Drinks</h2>
-          <form>
+          <form id="myForm1">
           <table class="american-grill-drinks">
               <tr><th><select id="drinks">
               <option value="coke">Coke</option>
@@ -164,7 +170,7 @@
           <td></td>
           <td>
             <h2>Totals</h2>
-            <form>
+            <form id="myForm2">
             <table class="american-grill-total">
                 <tr><th>Sub total: <input type="text" name ="subTotalText" id="subTotalText" readonly="readonly"></th></tr>
                 <tr><th>Discount total: <input type="text" name ="discountTotalText" id="discountTotalText" readonly="readonly"></th></tr>
@@ -180,7 +186,7 @@
       <td>&nbsp;</td>
       <td>
         <table class="american-grill-btn">
-          <tr><th>  <button type="button" onclick="calculateOrder()">Calculate Order</button></th></tr>
+          <tr><th>  <button type="button" onclick="calculateOrder()">Calculate Order</button></br><input type="button" onclick="clearForms()" value="Reset form"></th></tr>
         </table>
       <td>&nbsp;</td>
       </tr>
