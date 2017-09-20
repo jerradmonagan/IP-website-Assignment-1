@@ -1,7 +1,7 @@
-COP 4813/COP 5819: Internet Programming
-Assignment 1
+# COP 4813/COP 5819: Internet Programming
+## Assignment 1
                                                    
-Delivery Instructions
+### Delivery Instructions
 After completing the assignment, you are to submit a file containing a link to the assignment on the server. Additionally, the file should contain links to any resources (backgrounds, images, graphics, etc) you found on the Internet that were used in this assignment.
  
 Folder Structure
@@ -9,10 +9,10 @@ http://server /~Nnumber/cop4813/index.html - Initial ePortfolio web page will be
 http:// server /~N number/cop4813/assign1 /index.html - The location for assignment 1 – the “About Me” web page.
 http:// server /~Nnumber/cop4813/ style.css - The location for the style sheet for your ePortfolio.
  
-Assignment Description
+#### Assignment Description
 This is your first web page creation assignment for the course.  It is critical that you understand how to configure your web account, create folders, and properly upload files to the server. You are required to complete this assignment without the assistance of an authoring tool (e.g., DreamWeaver or NVU) as these skills are essential for the mastery of subsequent assignments.
  
-Part 1
+#### Part 1
 In this assignment, you will be creating the structure for the location of the following assignments and folder structure. You are first going to create a folder named cop4819 in your username folder. In the cop4819 folder, you will place an html file named index.html.  This web page will be an ePortfolio that provides links, brief descriptions, and reflections to all the assignments that you will do in this course.  An ePortfolio is a reflective device for you to watch your skills develop over time and for you to showcase to other interested parties.  The index.html file in the cop4819 folder should have the following information:
  
 The title of the web page should be “COP 4813 OR COP 5819: Internet Programming”.
@@ -24,7 +24,7 @@ Using the paragraph tag and a combination of text formatting tags, place a coupl
 Place an unordered list under the paragraphs that lists the learning objective of this assignment as you interpret them. Keep in mind, you will have to do this for each assignment in the course upon completion and submission.
 Place another horizontal rule after the paragraph.  This web page will be used to link to all the subsequent assignments in the course.
  
-Part 2
+#### Part 2
 Now that you have completed the first part of the assignment, we can move on to the next.  You are to create an “About Me” web page for your first assignment in the cop4813/assign1 folder.  This about me page should contain the following information:
  
 Your full name.
@@ -39,7 +39,7 @@ An active link back to the ePortfolio web page created as the first part of the 
  
 The “About Me” me web page should be properly formatted and should not contain any information or images that are disrespectful or that you would not want to share with everyone. 
  
-Part 3
+#### Part 3
 In the first and second part of the assignment, you created static web pages using a variety of html tags. Now, you are going to create a style sheet to standardize the look and feel of your ePortfolio. The cascading style sheet will modify each of the elements in your ePortfolio so there is a consistent format.  Follow the instructions to create and integrate your cascading style sheet:
  
 Create a separate cascading style sheet file (.css) file extension for all changes to the ePortfolio.
@@ -54,5 +54,5 @@ Standardize the unordered list tag to the same list style image, and position.
  
 You are welcome to go above and beyond the expectations set in this assignment.  Be sure to, at minimum, meet the expectations set in the specifications.
  
-Grading Rubric
+#### Grading Rubric
 This assignment will be evaluated using a 100 point scale.  Each of the specifications will be worth a varying number of points.  If you do not understand any of the specifications, post immediately to the discussion board on Canvas.  As long as you meet all the specifications, you should receive full credit.  Late assignments will not be accepted.
