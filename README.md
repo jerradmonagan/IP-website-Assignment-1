@@ -4,7 +4,7 @@
 ### Delivery Instructions
 After completing the assignment, you are to submit a file containing a link to the assignment on the server. Additionally, the file should contain links to any resources (backgrounds, images, graphics, etc) you found on the Internet that were used in this assignment.
  
-Folder Structure
+### Folder Structure
 1. **http://server /~Nnumber/cop4813/index.html** - Initial ePortfolio web page will be used to link to subsequent assignments.
 2. **http:// server /~N number/cop4813/assign1 /index.html** - The location for assignment 1 – the “About Me” web page.
 3. **http:// server /~Nnumber/cop4813/ style.css** - The location for the style sheet for your ePortfolio.
@@ -63,9 +63,9 @@ This assignment will be evaluated using a 100 point scale.  Each of the specifi
 ### Delivery Instructions
 After completing the assignment, you are to submit a file containing a link to the assignment on the server. Additionally, the file should contain links to any resources (backgrounds, images, graphics, etc) that you found on the Internet that were used in this assignment.
  
-Folder Structure
-1. http://server /~Nnumber/cop4813/index.html - Update ePortfolio page with your assignment description, reflection and learning objectives.
-2. http:// server /~Nnumber/cop4813/assign2/index.html - The location for assignment 2.
+### Folder Structure
+1. **http://server /~Nnumber/cop4813/index.html** - Update ePortfolio page with your assignment description, reflection and learning objectives.
+2. **http:// server /~Nnumber/cop4813/assign2/index.html** - The location for assignment 2.
  
 #### Assignment Description
 In your second assignment, we are going to focus on decision control structures and web form elements. You are going to have to create a site that collects some information from a user, uses this information to make decisions, and provide the user with custom feedback based on the information that they provided. You are not allowed to use any software libraries/frameworks on this assignment (e.g., jQuery). You will be able to use libraries starting on the next assignment.
@@ -98,3 +98,63 @@ You must create structured flow chart using Visio 2010(16) or some related softw
  
 #### Grading Rubric
 This assignment will be evaluated using a 100 point scale.  Each of the specifications will be worth a varying number of points.  If you do not understand any of the specifications, post immediately to the discussion board on Canvas.  As long as you meet all the specifications, you should receive full credit.  Late assignments will not be accepted.
+
+# COP 4813/COP 5819: Internet Programming
+## Assignment 3
+ 
+### Delivery Instructions
+After completing the assignment, you are to submit a file containing a link to the assignment on the server. Additionally, the file should contain links to any resources (backgrounds, images, graphics, etc) that you found on the Internet that were used in this assignment.
+ 
+### Folder Structure
+1. **http://server /~Nnumber/cop4813/index.html** - Update ePortfolio page with your assignment description, reflection and learning objectives.
+2. **http:// server /~Nnumber/cop4813/assign3/index.html** - The location for assignment 3.
+ 
+### Assignment Description
+In your third assignment, we are going to focus on repetition control structures and arrays as a data structure. You are going to have to create a program that computes several different descriptive statistics based on the information that the user provides.
+                                                                                                                      
+### Part 1
+First, you will need to create a form using various HTML tags. The form should collect a list of numbers from a user. I suggest simply using a text area in which the user can simply copy and paste a list of numbers. Or, you can collect the data through a list box. You can assume that the user will provide numeric data, and thus, no validation is necessary. You may use sfotware libraries starting with this assignment. I encourage you to learn at least one in this course (e.g., jQuery, AngularJS, etc.).
+ 
+The form should provide locations to output the information that is calculated by the program. Specifically, the program should provide an output for the mean, median, count, summation, mode, variance and standard deviation of the list of numbers. The all of the outputs should be rounded to two decimal places (See Part 2).
+ 
+Implement a function in the header of the HTML file that will, when invoked, capture the list of numbers provided by the user, parse the numbers, and populate an array of numbers based on the list that is provided. This array will then serve as input to several functions (See Part 2). This function should also, after invoking the functions below, present the information.
+ 
+The form elements must be organized meaningfully on the page and be properly labeled. Also, provide clear instructions to the user on how to use the form and the form’s purpose. The page must link to your style sheet from the previous assignment. Feel free to update the style sheet as you see fit.
+### Part 2
+Now that you have created a form to collect a list of numbers, you have to implement a program to use the information. You need to create a JavaScript file to serve as a function library. Name the file Statistics.js, and within the file, provide functions for the following statistical procedures. Your assignment HTML file must link to the function library.
+
+**N (number) – findN(array)**
+ 
+The N is the number of values within a list of numbers.
+
+**Summation – findSum(array)**\
+
+![Summation](./images/summation.png)
+
+**Mean -  findMean(array)**
+
+![mean](./images/mean.png)
+
+**Median - findMedian(array)**
+
+The median is the middle value (odd list of numbers) or the mid-point of the middle two (event list of numbers) in a sorted list of numbers.
+
+**Mode - findMode(array)**
+
+The mode is the value that occurs the most frequently in a list of numbers. Please note this is by far the most challenging procedure you will implement. Your code should account for a multimode condition.
+
+**Variance of sample - findVariance(array)**
+
+![variance](./images/variance.png)
+ 
+**Standard deviation of sample – findStandardDeviation(array)**
+
+![stddev](./images/stddev.png)
+
+Notice that there are patterns in these equations. Some aspects of these equations are derived from other equations. Your functions should make use of these patterns by having one function call another function to do intermediate processing. This reduces the amount of code you are writing and allows you to reuse the code you are writing. Remember, goals of software development include both modularity and reusability. These are two key concepts embedded within this programming assignment.
+ 
+### Part 3
+After having completed your program, you need to conduct unit testing for each of the functions you have written. To do this, you should include three sets of data and apply each set of data to your program. Compare the results of what your program produces as output with the results of either a hand calculation or the results from a spreadsheet. Save this information in an HTML format (table) and provide a link to the test results on the assignment page. 
+ 
+### Grading Rubric
+This assignment will be evaluated using a 100 point scale.  Each of the specifications will be worth a varying number of points.  If you do not understand any of the specifications, post immediately to the discussion board on Canvas, and seek help from me.  As long as you meet all the specifications, you should receive full credit.  Late assignments will not be accepted.
