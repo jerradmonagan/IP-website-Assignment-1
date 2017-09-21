@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>COP 4813: Assignment 2</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script type="text/javascript">
+      //calculates total of all menu items before tax and discounts then
+      //takes subtotal and multiplies times the discount, if any and returns total before taxes
+      //and retuns total to display for customer to pay
+      function calculateOrder()
+      {
+        var subTotal = 0;
+        var subTotalText=  document.getElementById("subTotalText");
+        var discountTotalText= document.getElementById("discountTotalText");
+        var taxesText = document.getElementById("taxesText");
+        var totalText = document.getElementById("totalText");
+        var discount = document.forms[0];
+        var i;
+        var discountTotal =0;
+        var totalBeforeTaxes=0;
+        var tax=0;
+        var total=0;
+        var registerText="";
+        //check items from menu add price to subtotal and then output them to register window
+        if (pizza.checked)
+        {
+          subTotal= parseFloat(document.getElementById("pizza").value)+ parseFloat(subTotal);
+          registerText = "pizza" +" "+registerText;
+          document.getElementById("register").innerHTML = registerText;
+        }//end if
+        if (hotdog.checked)
+        {
+          subTotal= parseFloat(document.getElementById("hotdog").value)+ parseFloat(subTotal);
+          registerText = "hotdog" +" "+registerText;
+          document.getElementById("register").innerHTML = registerText;
+        }//end if
+        if (macAndCheese.checked)
+        {
+          subTotal= parseFloat(document.getElementById("macAndCheese").value)+ parseFloat(subTotal);
+          registerText = "Mac and Cheese" +" "+registerText;
+          document.getElementById("register").innerHTML = registerText;
+        }//end if
+        if (frenchFries.checked)
+        {
+          subTotal= parseFloat(document.getElementById("frenchFries").value)+ parseFloat(subTotal);
+          registerText = "French Fries" +" "+registerText;
+          document.getElementById("register").innerHTML = registerText;
+        }//end if
+        if (hamburger.checked)
+        {
+          subTotal= parseFloat(document.getElementById("hamburger").value)+ parseFloat(subTotal);
+          registerText = "Hamburger" +" "+registerText;
+          document.getElementById("register").innerHTML = registerText;
+        }//end if
+        if (applePie.checked)
+        {
+          subTotal= parseFloat(document.getElementById("applePie").value)+ parseFloat(subTotal);
+          registerText = "Apple Pie" +" "+registerText;
+          document.getElementById("register").innerHTML = registerText;
+        }//end if
+
+        //add drinks to register output
+        var drinksText=document.getElementById("drinks");
+        var drinksUser=drinksText.options[drinksText.selectedIndex].text;
+        registerText = drinksUser+" "+registerText;
+        document.getElementById("register").innerHTML = registerText;
+
+        //print the subTotal
+        subTotalText.value=parseFloat(subTotal);
+
+        //start calculating discount
+        for (i = 0; i < discount.length; i++)
+        {
+          if (discount[i].checked)
+          {
+            discountTotal = parseFloat(subTotal)* parseFloat(discount[i].value);
+          }//end if
+        }//end for
+        discountTotalText.value=parseFloat(discountTotal);
+
+        //calculate total before taxes by subtracting the dicount from the subTotal
+        totalBeforeTaxes = parseFloat(subTotal)- parseFloat(discountTotal);
+
+        //calculate price of taxes at 7%
+        tax = parseFloat(totalBeforeTaxes)*.07;
+        taxesText.value =parseFloat(tax);
+
+        //calculate total that customer has to pay by adding taxes to total before tax
+        total = parseFloat(tax)+parseFloat(totalBeforeTaxes);
+        totalText.value = parseFloat(total);
+
+        //calls checkEmail
+        checkEmail()
+      }//end addMenu function
+
+      //check email to verify it is correct format and display on order
+      function checkEmail()
+      {
+        var email = document.getElementById('txtEmail');
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!filter.test(email.value))
+        {
+          email.value="Not a valid email address";
+          document.getElementById('txtEmail').style.background="red";
+          document.getElementById('errors').innerHTML="Enter a valid email";
+          email.focus;
+          return false;
+        }//end if
+        else
+        {
+          document.getElementById("emailText").innerHTML=email.value;
+          document.getElementById('errors').innerHTML="";
+          document.getElementById('txtEmail').style.background="white";
+        }//end else
+      }//end checkEmail()
+      //clears all forms
+      function clearForms()
+      {
+        document.getElementById("myForm").reset();
+        document.getElementById("myForm1").reset();
+        document.getElementById("myForm2").reset();
+        document.getElementById("myForm3").reset();
+        document.getElementById('txtEmail').style.background="white";
+        document.getElementById("pizza").checked=false;
+        document.getElementById("hotdog").checked=false;
+        document.getElementById("hamburger").checked=false;
+        document.getElementById("frenchFries").checked=false;
+        document.getElementById("applePie").checked=false;
+        document.getElementById("macAndCheese").checked=false;
+
+      }//end clearForms
+    </script>
+  </head>
+  <body>
+    <h1>American Grill</h1>
+    <table class="american-grill-items">
+      <tr><td><img src="../images/pizza.jpg" alt="Pizza"></td><td><img src="../images/hotdog.jpg" alt="hotdog"></td><td><img src="../images/mac&cheese.jpg" alt="Mac and cheese"></td></tr>
+      <tr><td>Pizza $10.00</td><td>Hot Dog $4.50</td><td>Mac and Cheese $3.50</td></tr>
+      <tr><td><input type="checkbox" id="pizza" value="10"></td><td><input type="checkbox" id="hotdog" value="4.5"></td><td><input type="checkbox" id="macAndCheese" value="3.5"></td></tr>
+      <tr><th><img src="../images/fries.jpg" alt="French Fries"></th>  <th><img src="../images/hamburg.jpg" alt="Hamburger"></th>  <th><img src="../images/applepie.jpg" alt="Apple Pie"></th></tr>
+      <tr><td>French Fries $1.50</td><td>Hamburger $5.00</td><td>Apple Pie $2.25</td></tr>
+      <tr><td><input type="checkbox" id="frenchFries" value="1.5"></td><td><input type="checkbox" id="hamburger" value="5"></td><td><input type="checkbox" id="applePie" value="2.25"></td></tr>
+
+      <tr><td><form id="myForm3">Customer Email: <input type="text" id="txtEmail" name="txtEmail"/></form></td>
+        <td><h2>Discounts</h2>
+          <form id ="myForm">
+        <table class="american-grill-discount">
+          <tr><th><input type="radio" name="discount" value="0" checked> None</th></tr>
+          <tr><th><input type="radio" name="discount" value=".10"> Senior</th></tr>
+          <tr><th><input type="radio" name="discount" value=".05"> Student</th></tr>
+          <tr><th><input type="radio" name="discount" value=".15"> Miltary</th></tr>
+        </table></form>
+      </td>
+        <td>
+          <h2>Drinks</h2>
+          <form id="myForm1">
+          <table class="american-grill-drinks">
+              <tr><th><select id="drinks">
+              <option value="coke">Coke</option>
+              <option value="sprite">Sprite</option>
+              <option value="coffee">Coffee</option>
+              <option value="water">Water</option>
+              </select></th></tr>
+          </table>
+          </form>
+        </td></tr>
+        <tr>
+          <td></td>
+          <td>
+            <h2>Totals</h2>
+            <form id="myForm2">
+            <table class="american-grill-total">
+                <tr><th>Sub total: <input type="text" name ="subTotalText" id="subTotalText" readonly="readonly"></th></tr>
+                <tr><th>Discount total: <input type="text" name ="discountTotalText" id="discountTotalText" readonly="readonly"></th></tr>
+                <tr><th>Taxes: <input type="text" name="taxesText" id="taxesText" readonly="readonly"></th></tr>
+                <tr><th>Total: <input type="text" name="totalText" id="totalText" readonly="readonly"></th></tr>
+                <tr><th>Customer Email:<p id ="emailText"></p></th></tr>
+            </table>
+            </form>
+          </td>
+          <td><h2>Register Output</h2><p id="register"></p></td>
+        </tr>
+      <tr>
+      <td>&nbsp;</td>
+      <td>
+        <table class="american-grill-btn">
+          <tr><th>  <button type="button" onclick="calculateOrder()">Calculate Order</button><br><input type="button" onclick="clearForms()" value="Reset form"></th></tr>
+        </table>
+      <td>&nbsp;</td>
+      </tr>
+  </table>
+  <div class="link-center">
+    <p id ="errors"></p>
+    <a href ="../index.html">ePortfolio</a><br />
+    <a href="../images/assign2.jpg">Flow Chart</a>
+  </div>
+  </body>
+</html>
