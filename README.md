@@ -1,3 +1,4 @@
+# COP 4813/COP 5819: Internet Programming
 - [COP 4813/COP 5819: Internet Programming](#cop-4813-cop-5819--internet-programming)
   * [Assignment 1](#assignment-1)
     + [Delivery Instructions](#delivery-instructions)
