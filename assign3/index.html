@@ -11,7 +11,30 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.css" rel="stylesheet">
+    <script src="statistics.js"></script>
+    <script>
+    function addNumber()
+  	{
+  		var input = document.getElementById("input").value;
+  		var list = document.getElementById("list");
+  		var option = document.createElement("option");
+  		list.options.add(option);
+  		option.text = input;
+  	}//end addNumber function
 
+    function getStatistics()
+  	{
+  		var list = new Array();
+  		var select = document.getElementById("list");
+  		for(var i = 0; i < select.options.length; i++)
+  		{
+  			list[i] = parseInt(select.options[i].text);
+  		}
+  		document.getElementById("summation").value = findSum(list);
+  		document.getElementById("mean").value = findMean(list);
+  	}//end getStatistics function
+
+    </script>
     <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">
   </head>
@@ -59,11 +82,53 @@
     </div>
 
     <div class="container">
-
-
-
+      <form id="calculator" action="">
+      <div class="row">
+        <div class="col-md-12">
+          <p>This application is designed to ....</p>
+        </div>
+        <div class="col-md-6">
+          <h3>Enter up to 5 Numbers</h3>
+            <table>
+              <tr><input type="text" id="input"><td></td></tr>
+            </table>
+          <p><a class="btn btn-secondary" onclick="addNumber()" role="button">Submit &raquo;</a></p>
+        </div>
+        <div class="col-md-6">
+          <h3>Numbers to be processed</h3>
+          <table>
+          <tr>
+            <td>Numbers: </td><td><select id="list" size="5"></select></td>
+          </tr>
+          <tr>
+            <td><p><a class="btn btn-secondary"  role="button" onClick="getStatistics()">Get Statistics &raquo;</a></p></td>
+          </tr>
+          </table>
+        </div>
+        <div class="col-md-12">
+          <h2>Answers</h2>
+          <tr>
+          <td><input type="text" id="summation" readonly="readonly"></td><td>:Summation</td>
+          </tr>
+          <tr>
+            <td><input type="text" id="mean" readonly="readonly"></td><td>:Mean</td>
+          </tr>
+          <tr>
+          <td><input type="text" id="median" readonly="readonly"></td>  <td>:Median</td>
+          </tr>
+          <tr>
+            <td><input type="text" id="mode" readonly="readonly"></td><td>:Mode</td>
+          </tr>
+          <tr>
+            <td><input type="text" id="variance" readonly="readonly"></td><td>:Variance</td>
+          </tr>
+          <tr>
+            <td><input type="text" id="stddev" readonly="readonly"></td><td>:Standard Deviation</td>
+          </tr>
+        </div>
+      </div>
+      </form>
       <hr>
-
       <footer>
         <p>&copy; Jerrad Monagan 2017</p>
       </footer>
