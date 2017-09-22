@@ -1,3 +1,33 @@
+- [COP 4813/COP 5819: Internet Programming](#cop-4813-cop-5819--internet-programming)
+  * [Assignment 1](#assignment-1)
+    + [Delivery Instructions](#delivery-instructions)
+    + [Folder Structure](#folder-structure)
+      - [Assignment Description](#assignment-description)
+      - [Part 1](#part-1)
+      - [Part 2](#part-2)
+      - [Part 3](#part-3)
+      - [Grading Rubric](#grading-rubric)
+- [COP 4813/COP 5819: Internet Programming](#cop-4813-cop-5819--internet-programming-1)
+  * [Assignment 2](#assignment-2)
+    + [Delivery Instructions](#delivery-instructions-1)
+    + [Folder Structure](#folder-structure-1)
+      - [Assignment Description](#assignment-description-1)
+      - [Part 1](#part-1-1)
+      - [Part 2](#part-2-1)
+      - [Part 3](#part-3-1)
+      - [Grading Rubric](#grading-rubric-1)
+- [COP 4813/COP 5819: Internet Programming](#cop-4813-cop-5819--internet-programming-2)
+  * [Assignment 3](#assignment-3)
+    + [Delivery Instructions](#delivery-instructions-2)
+    + [Folder Structure](#folder-structure-2)
+    + [Assignment Description](#assignment-description-2)
+    + [Part 1](#part-1-2)
+    + [Part 2](#part-2-2)
+    + [Part 3](#part-3-2)
+    + [Grading Rubric](#grading-rubric-2)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 # COP 4813/COP 5819: Internet Programming
 ## Assignment 1
                                                    
