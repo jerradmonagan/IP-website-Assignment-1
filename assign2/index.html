@@ -15,7 +15,7 @@
         var discountTotalText= document.getElementById("discountTotalText");
         var taxesText = document.getElementById("taxesText");
         var totalText = document.getElementById("totalText");
-        var discount = document.forms[0];
+        var discount = document.myForm;
         var i;
         var discountTotal =0;
         var totalBeforeTaxes=0;
@@ -144,7 +144,7 @@
 
       <tr><td><form id="myForm3">Customer Email: <input type="text" id="txtEmail" name="txtEmail"/></form></td>
         <td><h2>Discounts</h2>
-          <form id ="myForm">
+          <form id ="myForm" name="myForm">
         <table class="american-grill-discount">
           <tr><th><input type="radio" name="discount" value="0" checked> None</th></tr>
           <tr><th><input type="radio" name="discount" value=".10"> Senior</th></tr>
