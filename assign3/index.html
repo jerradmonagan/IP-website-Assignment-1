@@ -30,25 +30,15 @@
           <li class="nav-item active">
             <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Assignments</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="../assign1/index.html">Assignment 1</a>
+              <a class="dropdown-item" href="../assign2/index.html">Assignment 2</a>
+              <a class="dropdown-item" href="../assign3/index.html">Assignment 3</a>
             </div>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
       </div>
     </nav>
 
@@ -63,7 +53,13 @@
       <form id="calculator" action="">
       <div class="row">
         <div class="col-md-12">
-          <p>This application is designed to ....</p>
+          <p>This application is designed to process 5 numbers and output Mean, Mode, Median, Variance, and Standar Deviation.</p>
+          <h2>Directions</h2>
+          <ol>
+            <li>Enter 5 numbers 1 at a time hitting <strong>submit</strong> after each entry</li>
+              <li>After all 5 numbers have been entered and appear in list box "numbers to be processed", click the <strong>get statistics button</strong></li>
+              <li>After reviewing answers and ready to check a new solution click <strong>reset form</strong> and start at step 1 again</li>
+          </ol>
         </div>
         <div class="col-md-6">
           <h3>Enter up to 5 Numbers</h3>
@@ -83,7 +79,7 @@
           </tr>
           </table>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-4">
           <h2>Answers</h2>
           <tr>
           <td><input type="text" id="summation" readonly="readonly"></td><td>:Summation</td>
