@@ -89,5 +89,5 @@ function findStandardDeviation(x)
 function resetCalc()
 {
   document.getElementById("calculator").reset();
-  document.getElementById("list").reset();
+  $("#list").empty();
 }//end resetCalc fuction
