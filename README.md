@@ -189,3 +189,32 @@ After having completed your program, you need to conduct unit testing for each o
  
 ### Grading Rubric
 This assignment will be evaluated using a 100 point scale.  Each of the specifications will be worth a varying number of points.  If you do not understand any of the specifications, post immediately to the discussion board on Canvas, and seek help from me.  As long as you meet all the specifications, you should receive full credit.  Late assignments will not be accepted.
+
+# COP 4813/COP 5819: Internet Programming
+## Assignment 4
+ 
+### Delivery Instructions
+
+After completing the assignment, you are to submit a file containing a link to the assignment on the server. Additionally, the file should contain links to any resources (backgrounds, images, graphics, etc) that you found on the Internet that were used in this assignment.
+ 
+### Folder Structure
+
+1. **http://server/cop4813/index.html** - Update ePortfolio page with your assignment description, reflection and learning objectives.
+2. **http:// server/ cop4813/assign4/index.html** - The location for assignment 4.
+ 
+### Assignment Description
+
+For this assignment, you have to create an animation of a concept.  First, you will need to select a topic for which you want to create the animation.  The topic can be anything you are interested in from your prior academic, personal or professional experiences. The animation of a concept should involve a topic that requires a higher level of cognition.  For instance, you might create an animation for how lighting works or how a brake pump works.
+ 
+Ideally, the animation of a concept should be more than just eye-catching visual elements.  It should visually communicate the relationships among variables or a casual process.  To do this, you can combine textual and graphical information to send viewers a meaningful visual message. While you are given artistic latitude in this assignment, your submission does have to meet some basic requirements. The animation of a concept should meet the following minimum requirements:
+* incorporate three or more meaningful colors
+* incorporate minimal and meaningful text (do not use too much text)
+* about 5 to 10 seconds in length (no more than that)
+* incorporate three or more shapes or images meaningfully
+* incorporate the use of motion tweening to move, rotate, or change   the size of visual objects
+ 
+To earn additional points, you can include music and sound in your animation.  However, you should attempt to semantically connect the sound and music to the animation. Random sounds or effects are discouraged.
+ 
+### Grading Rubric
+
+This assignment will be evaluated using a 100 point scale.  Each of the specifications will be worth a varying number of points.  If you do not understand any of the specifications, post immediately to the discussion board on Canvas, and seek help from me.  As long as you meet all the specifications, you should receive full credit.  Late assignments will not be
