@@ -225,3 +225,48 @@ To earn additional points, you can include music and sound in your animation.  
 ### Grading Rubric
 
 This assignment will be evaluated using a 100 point scale.  Each of the specifications will be worth a varying number of points.  If you do not understand any of the specifications, post immediately to the discussion board on Canvas, and seek help from me.  As long as you meet all the specifications, you should receive full credit.  Late assignments will not be
+
+# COP 4813/COP 5819: Internet Programming
+
+## Assignment 5
+
+### Delivery Instructions
+
+After completing the assignment, you are to submit a file containing active links to the assignment on the server. Additionally, the file should contain links to any resources (backgrounds, images, graphics, etc) that you found on the Internet that were used in this assignment. **Also, include the username and password to log into your PHP site. This is essential for me to be able to grade your assignment and see your work.**
+
+### Folder Structure
+
+1. **http://server /~Nnumber/cop4813/index.html** - Update ePortfolio page with your assignment description, reflection and learning objectives.
+2. **http:// server /~Nnumber/cop4813/assign5/index.php** - Simple Login Manager in PHP on the server.
+3. **http:// server /~Nnumber/cop4813/assign5/admin.php** - PHP Stock manger software stored on the server.
+
+### Specifications
+
+The purpose of this assignment is to expose you to the basics of server-side technology commonly used on the Web. The assignment has two parts that should be completed independently. You are allowed to use development tools to produce this assignment. Further, you are allowed to integrate other software libraries with this assignment.
+
+### Part 1 – Simple Login Manager (PHP)
+
+In the first part of the assignment, you are to create a simple application that governs access to various services (PHP files). Inside of a text file, store a username and password. Create a simple form that requests a username and password and validates the information. If the user provides the correct information, the user should be provided access (links) to services. If not, the user should be redirected back to the login page with an appropriate error message. You should implement the following services in PHP:
+
+**Services**                       **Description**
+
+Add Stock                   Adds a stock to the portfolio.
+
+Modify Stock              Modifies a stock in the portfolio.
+
+Delete Stock               Removes a stock from the portfolio.
+
+
+The use of sessions or persistent memory is required for part of the assignment. You should store the username for later use. For instance, you should print out the username on every page. Be sure to provide the login credential for the system when you turn in this assignment.
+
+### Part 2 – Stock Portfolio Manager (PHP)
+
+In this second part, you have to create a stock portfolio manager using PHP. The PHP stock portfolio manager should allow a user to add, modify and delete stocks from a portfolio. When a user adds a stock record, the stock tick and number of shares should be collected. The information should be added to a file with the date and time the stocks were added. On the same page or a separate page, a program should read the file, make the appropriate calls to Yahoo Finance to retrieve the stock value, and tabulate the total value of those shares (multiply the number of shares by the current stock value). Additionally, a total value of the portfolio should be shown to the user. The user should also be able to modify the number of shares or delete any stock record from the portfolio. The following statement will retrieve the relevant information from Yahoo Finance:
+
+$open = fopen("http://finance.yahoo.com/d/quotes.csv?s=$stock&f=sl1d1t1c1ohgv&e=.csv", "r");
+
+Be sure to round to two decimal places for the numeric output.
+
+### Grading Rubric
+
+This assignment will be evaluated using a 100 point scale.  Each of the specifications will be worth a varying number of points.  If you do not understand any of the specifications, post immediately to the discussion board on Canvas or contact the instructor.  As long as you meet all the specifications, you should receive full credit.  Late assignments will not be accepted.
