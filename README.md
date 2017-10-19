@@ -32,8 +32,17 @@
     + [Folder Structure](#folder-structure-3)
     + [Assignment Description](#assignment-description-3)
     + [Grading Rubric](#grading-rubric-3)
+- [COP 4813/COP 5819: Internet Programming](#cop-4813-cop-5819--internet-programming-4)
+  * [Assignment 5](#assignment-5)
+    + [Delivery Instructions](#delivery-instructions-4)
+    + [Folder Structure](#folder-structure-4)
+    + [Specifications](#specifications)
+    + [Part 1 – Simple Login Manager (PHP)](#part-1---simple-login-manager--php-)
+    + [Part 2 – Stock Portfolio Manager (PHP)](#part-2---stock-portfolio-manager--php-)
+    + [Grading Rubric](#grading-rubric-4)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 
 # COP 4813/COP 5819: Internet Programming
@@ -248,13 +257,11 @@ The purpose of this assignment is to expose you to the basics of server-side tec
 
 In the first part of the assignment, you are to create a simple application that governs access to various services (PHP files). Inside of a text file, store a username and password. Create a simple form that requests a username and password and validates the information. If the user provides the correct information, the user should be provided access (links) to services. If not, the user should be redirected back to the login page with an appropriate error message. You should implement the following services in PHP:
 
-**Services**                       **Description**
-
-Add Stock                   Adds a stock to the portfolio.
-
-Modify Stock              Modifies a stock in the portfolio.
-
-Delete Stock               Removes a stock from the portfolio.
+|**Services**|**Description**|
+|------------|:-------------:|
+|Add Stock|Adds a stock to the portfolio.|
+|Modify Stock|Modifies a stock in the portfolio.|
+|Delete Stock|Removes a stock from the portfolio.|
 
 
 The use of sessions or persistent memory is required for part of the assignment. You should store the username for later use. For instance, you should print out the username on every page. Be sure to provide the login credential for the system when you turn in this assignment.
