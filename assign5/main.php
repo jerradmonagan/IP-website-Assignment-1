@@ -9,4 +9,8 @@
 	echo "Welcome back, " . $_SESSION['username'];
 
 ?>
-<br><a href="logout.php">Log Out</a>
+<br>
+<a href="addStock.php">Add Stock</a><br>
+<a href="modifyStock.php">Modify Stock</a><br>
+<a href="deleteStock.php">Delete Stock</a><br>
+<a href="logout.php">Log Out</a>
