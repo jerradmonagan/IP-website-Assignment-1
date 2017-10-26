@@ -22,7 +22,7 @@
 	fclose($fp);
 	if ((strcmp ($username,$userNameFile)==0) &&  (strcmp ($password,$passwordFile)==0))
 	{
-		header("Location: main.php");
+		header("Location: admin.php");
 		//echo "UserName is ". $userNameFile . " Password is ". $passwordFile. " From user ". $password;
 	}else{
 		header("Location: index.php?error=1");

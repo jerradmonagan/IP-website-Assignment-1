@@ -10,5 +10,5 @@ echo nl2br("Welcome back, " . $_SESSION['username']."\n");
 echo "This is the delete stock page";
 ?>
 <br>
-<a href ="main.php">Back</a><br>
+<a href ="admin.php">Back</a><br>
 <a href="logout.php">Log Out</a>
