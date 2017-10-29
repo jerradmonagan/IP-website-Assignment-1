@@ -16,17 +16,18 @@ foreach ($lines as $line_num => $line)
     echo "Line #<b>{$line_num}</b> : " . htmlspecialchars($line) . "<br />\n";
 }
 fclose($filename);
-echo "<br>
+echo '<br>
 <h2>Delete a Stock</h2><br>
-<form action=\"\" method=\"post\">
+<h3>Chose the Line Number of the stock you wish to delete</h3><br>
+<form action="" method="post">
 <table>
 <tr>
-  <td>Line # to delete: </td><td><input type=\"text\" name=\"stock\"></td>
+  <td>Line # to delete:</td><td><input type="text" name="stock"></td><td>Example: 0</td>
 </tr>
 <tr>
-  <td colspan=\"2\"><input type=\"submit\"value=\"Submit\"></td>
+  <td colspan="2"><input type="submit"value="Submit"></td>
 </tr>
-</table>";
+</table>';
 
 if(!empty($_POST))
 {
@@ -43,5 +44,5 @@ file_put_contents($filename, implode(PHP_EOL,$lines));
 <br>
 <a href="addStock.php">Add Stock</a><br>
 <a href="modifyStock.php">Modify Stock</a><br>
-<a href ="admin.php">Portfolliok</a><br>
+<a href ="admin.php">Portfollio</a><br>
 <a href="logout.php">Log Out</a>

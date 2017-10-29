@@ -9,7 +9,7 @@ echo "<ul>";
 //get variables
 $stock = $_POST['stock'];
 $stockQTY = $_POST['stockQTY'];
-$today = date("m.d.y");
+$today = date("Y-m-d H:i:s");
 
 $file_name = "stockList.dat";
 $fp = fopen($file_name, "a");
@@ -31,6 +31,7 @@ while($line = fgets($fp))
 }
 echo "</ul>";
 fclose($fp);
+header("Location: admin.php");
  ?>
  <a href="addStock.php">Add Stock</a><br>
  <a href="modifyStock.php">Modify Stock</a><br>

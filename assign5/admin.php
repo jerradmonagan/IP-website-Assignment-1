@@ -26,9 +26,9 @@
           $portfollioTotal= number_format($calcPortfollioTotal,2,'.', '');
           $displayStockPrice = number_format($stock_info[2],2,'.', '');
           //echo"<b>$stock</b> $stock_info[1] is worth <b>$stock_info[2]</b> you own <b>$numberofshares</b> total value at <b>$stockTotal<br></b>";
-          echo "<tr><td>$stock</td><td>$stock_info[1]</td><td>$displayStockPrice</td><td align=\"right\">$numberofshares</td><td>$stockTotal</td></tr>";
+          echo "<tr><td>$stock</td><td  align=\"center\">$stock_info[1]</td><td  align=\"right\">$displayStockPrice</td><td align=\"right\">$numberofshares</td><td  align=\"right\">$stockTotal</td></tr>";
       	}
-        echo "<tr><td colspan =\"5\">Your total portfollio is worth $portfollioTotal Dollars.</td></tr>";
+        echo "<tr><td colspan =\"5\"  align=\"center\">Your total portfollio is worth $portfollioTotal Dollars.</td></tr>";
         echo "</table>";
 
       	fclose($fp);

@@ -16,27 +16,30 @@ foreach ($lines as $line_num => $line)
     echo "Line #<b>{$line_num}</b> : " . htmlspecialchars($line) . "<br />\n";
 }
 fclose($filename);
-$datemodified = date("m.d.y");
+$datemodified = date("Y-m-d H:i:s");
 echo '<br>
 <h2Modify a Stock</h2><br>
+<h3>Choose the stock you wish to modify and hit submit</h3><br>
 <form action="" method="post">
 <table>
 <tr>
-  <td>Line # to modify: </td><td><input type="text" name="stock"></td>
+  <td>Line # to modify: </td><td><input type="text" name="stock"></td><td>Example: 0</td>
 </tr>
 <tr>
-	<td>Stock Ticker: </td><td><input type="text" name="stocktick"></td>
+	<td>Stock Ticker: </td><td><input type="text" name="stocktick" value="'.$stockArray.'"></td><td>Example: AAPL</td>
 </tr>
 <tr>
-  <td>Amount of Stock Purchased: </td><td><input type="text" name="stockQTY"></td>
+  <td>Amount of Stock Purchased: </td><td><input type="text" name="stockQTY" value= "'.$numberofshares.'"></td><td>Example: 6</td>
 </tr>
 <tr>
-  <td colspan="2"><input type="submit"value="Submit"></td>
+  <td colspan="3"><input type="submit"value="Submit"></td>
 </tr>
 </table>';
 
 if(!empty($_POST))
 {
+  $stockArray = strtok($line, ",");
+  $numberofshares = strtok(",").trim();
   $stocktick = $_POST['stocktick'];
   $stockQTY = $_POST['stockQTY'];
   $stock = $_POST['stock'];
@@ -45,7 +48,13 @@ if(!empty($_POST))
 }
 //test the Array printing
 //print_r(array_values($lines));
+function modifyText()
+{
+  $stocktick = $_POST['stocktick'];
+  $stockArray = strtok($line, ",");
+  $numberofshares = strtok(",").trim();
 
+}
 
 //test the deleteing of array item
 file_put_contents($filename, implode(PHP_EOL,$lines));
