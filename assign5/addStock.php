@@ -25,5 +25,7 @@ echo "This is the add stock page";
   <td colspan="2"><input type="submit" value="Submit"></td>
 </tr>
 </table>
-<a href ="admin.php">Back</a><br>
+<a href ="admin.php">Portfollio</a><br>
+<a href="modifyStock.php">Modify Stock</a><br>
+<a href="deleteStock.php">Delete Stock</a><br>
 <a href="logout.php">Log Out</a>

@@ -13,8 +13,8 @@
         echo "<table><th>Stock</th><th>Company</th><th>Value</th><th>Number of Shares</th><th>Total Value</th>";
         while($line = fgets($fp))
       	{
-      		$stock = strtok($line, ":");
-      		$numberofshares = strtok(":").trim();
+      		$stock = strtok($line, ",");
+      		$numberofshares = strtok(",").trim();
           //get the information from yahoo API
           $open = fopen("http://finance.yahoo.com/d/quotes.csv?s=$stock&f=snl1d1t1c1ohgv&e=.csv", "r");
           $stock_info = fgetcsv ($open, 1000, ",");

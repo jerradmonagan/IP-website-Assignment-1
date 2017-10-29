@@ -15,7 +15,7 @@ $file_name = "stockList.dat";
 $fp = fopen($file_name, "a");
 
 //write file
-fwrite($fp, "$stock:$stockQTY:$today\n");
+fwrite($fp, "$stock,$stockQTY,$today\n");
 
 //close file
 fclose($fp);
@@ -24,13 +24,16 @@ $fp = fopen($file_name, "r");
 echo "<ul>";
 while($line = fgets($fp))
 {
-  $stock = strtok($line, ":");
-  $stockQTY = strtok(":");
-  $dateAdded = strtok(":");
+  $stock = strtok($line, ",");
+  $stockQTY = strtok(",");
+  $dateAdded = strtok(",");
   echo "<li>Stock: $stock <br> shares owned  $stockQTY added on $dateAdded.</li>";
 }
 echo "</ul>";
 fclose($fp);
  ?>
- <a href ="admin.php">Back</a><br>
+ <a href="addStock.php">Add Stock</a><br>
+ <a href="modifyStock.php">Modify Stock</a><br>
+ <a href="deleteStock.php">Delete Stock</a><br>
+ <a href ="admin.php">Portfollio</a><br>
  <a href="logout.php">Log Out</a>
