@@ -44,7 +44,11 @@ if(!empty($_POST))
   $stockQTY = $_POST['stockQTY'];
   $stock = $_POST['stock'];
   unset($lines[$stock]);
-  $lines[$stock]= "$stocktick,$stockQTY,$datemodified";
+  //insert the modified record
+  $lines[$stock]= "$stocktick,$stockQTY,$datemodified\n";
+  //test the deleteing of array item
+  file_put_contents($filename, implode(PHP_EOL,$lines));
+  header("Location: admin.php");
 }
 //test the Array printing
 //print_r(array_values($lines));
@@ -56,11 +60,8 @@ function modifyText()
 
 }
 
-//test the deleteing of array item
-file_put_contents($filename, implode(PHP_EOL,$lines));
 ?>
 <br>
-<a href="addStock.php">Add Stock</a><br>
-<a href="deleteStock.php">Delete Stock</a><br>
 <a href ="admin.php">Portfollio</a><br>
+<a href="deleteStock.php">Delete Stock</a><br>
 <a href="logout.php">Log Out</a>

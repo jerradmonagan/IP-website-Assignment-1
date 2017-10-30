@@ -33,16 +33,18 @@ if(!empty($_POST))
 {
     $stock = $_POST['stock'];
     unset($lines[$stock]);
+    $lines2=array_values($lines);
+    file_put_contents($filename, implode(PHP_EOL,$lines2).PHP_EOL);
+    header("Location: admin.php");
 }
 //test the Array printing
 //print_r(array_values($lines));
 
 
 //test the deleteing of array item
-file_put_contents($filename, implode(PHP_EOL,$lines));
+
 ?>
 <br>
-<a href="addStock.php">Add Stock</a><br>
-<a href="modifyStock.php">Modify Stock</a><br>
 <a href ="admin.php">Portfollio</a><br>
+<a href="modifyStock.php">Modify Stock</a><br>
 <a href="logout.php">Log Out</a>

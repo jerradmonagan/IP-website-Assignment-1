@@ -15,7 +15,7 @@ $file_name = "stockList.dat";
 $fp = fopen($file_name, "a");
 
 //write file
-fwrite($fp, "$stock,$stockQTY,$today\n");
+fwrite($fp, "$stock,$stockQTY,$today".PHP_EOL);
 
 //close file
 fclose($fp);
@@ -33,7 +33,6 @@ echo "</ul>";
 fclose($fp);
 header("Location: admin.php");
  ?>
- <a href="addStock.php">Add Stock</a><br>
  <a href="modifyStock.php">Modify Stock</a><br>
  <a href="deleteStock.php">Delete Stock</a><br>
  <a href ="admin.php">Portfollio</a><br>
