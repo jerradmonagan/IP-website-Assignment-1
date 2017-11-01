@@ -1,6 +1,17 @@
 <html>
 <head>
-
+  <script>
+  	function updateRecord()
+  	{
+  		document.myForm.action='update.php';
+  		document.myForm.submit();
+  	}
+    function deleteRecord()
+    {
+      document.myForm.action='delete.php';
+      document.myForm.submit();
+    }
+  </script>
 </head>
 <body>
   <form action='insert.php' method='get'>
@@ -38,6 +49,7 @@
   </table>
   </form>
 </form>
+<form action='' method='get' name='myForm'>
 <?php
 $servername = "localhost";
 $username = "root";
@@ -54,11 +66,12 @@ $sql = "SELECT MovieID, Title, Year, Director, Rating, Genre, Runtime, Writer, A
 $result = $conn->query($sql);
   if ($result->num_rows > 0) {
     echo "<table border='1'>";
+    echo '<tr><td></td><td>Title</td><td>Year</td><td>Director</td><td>Rating</td><td>Genre</td><td>Runtime</td><td>Writer</td><td>Actor</td><td>ProductionCompany</td></tr>';
     while($row = $result->fetch_assoc())
     {
       $radio=$row["MovieID"];
       echo "<tr>";
-      echo "<td><input type='radio' name='personID' value='$radio'></td>";
+      echo "<td><input type='radio' name='MovieID' value='$radio'></td>";
       echo "<td>".$row["Title"]."</td>";
       echo "<td>".$row["Year"]."</td>";
       echo "<td>".$row["Director"]."</td>";
@@ -76,7 +89,8 @@ $result = $conn->query($sql);
     }
     $conn->close();
 ?>
-
+<input type='button' value='Delete Record' onClick='deleteRecord()'>
+<input type='button' value='Update Record' onClick='updateRecord()'>
 </form>
 </body>
 </html>
