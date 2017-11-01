@@ -26,7 +26,28 @@
       <td>Director:</td><td><input type='text' name='Director'></td>
     </tr>
     <tr>
-      <td>Rating:</td><td><input type='text' name='Rating'></td>
+    <td>Rating:</td><td>
+    <select name="Rating">
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "123456";
+    $dbname="movie";
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error)
+    {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    $sql = "SELECT Rating FROM rating";
+    $result = $conn->query($sql);
+    while ($row = $result->fetch_assoc())
+    {
+    echo '<option value="'.$row['Rating'].'">' . $row['Rating'] . "</option>";
+    }
+    ?>
+    </select></td>
     </tr>
     <tr>
       <td>Genre:</td><td><input type='text' name='Genre'></td>
@@ -42,6 +63,9 @@
     </tr>
     <tr>
       <td>Production Comapany:</td><td><input type='text' name='ProductionCompany'></td>
+    </tr>
+    <tr>
+      <td>Is Movie Owned:</td><td><input type='checkbox' value="1" name='Owned'></td>
     </tr>
     <tr>
       <td colspan='2'><input type='submit' value='Insert Record'></td>
@@ -62,11 +86,11 @@ if ($conn->connect_error)
 {
   die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT MovieID, Title, Year, Director, Rating, Genre, Runtime, Writer, Actor, ProductionCompany FROM movie";
+$sql = "SELECT MovieID, Title, Year, Director, Rating, Genre, Runtime, Writer, Actor, ProductionCompany, Owned FROM movie";
 $result = $conn->query($sql);
   if ($result->num_rows > 0) {
     echo "<table border='1'>";
-    echo '<tr><td></td><td>Title</td><td>Year</td><td>Director</td><td>Rating</td><td>Genre</td><td>Runtime</td><td>Writer</td><td>Actor</td><td>ProductionCompany</td></tr>';
+    echo '<tr><td></td><td>Title</td><td>Year</td><td>Director</td><td>Rating</td><td>Genre</td><td>Runtime</td><td>Writer</td><td>Actor</td><td>ProductionCompany</td><td>Owned</td></tr>';
     while($row = $result->fetch_assoc())
     {
       $radio=$row["MovieID"];
@@ -81,6 +105,7 @@ $result = $conn->query($sql);
       echo "<td>".$row["Writer"]."</td>";
       echo "<td>".$row["Actor"]."</td>";
       echo "<td>". $row["ProductionCompany"]."</td>";
+      echo "<td>". $row["Owned"]."</td>";
       echo "</tr>";
     }
     echo "</table>";
