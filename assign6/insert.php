@@ -9,12 +9,13 @@ $Genre=$_GET['Genre'];
 $Runtime=$_GET['Runtime'];
 $Writer=$_GET['Writer'];
 $Actor=$_GET['Actor'];
-$ProductionCompany=$_GET['ProductionCompany'];
+$Country=$_GET['Country'];
 $Owned=$_GET['Owned'];
+$imdbID=$_GET['imdbID'];
 
 //insert new item into database
-$sql = "INSERT INTO movie (Title, Year, Director, Rating, Genre, Runtime, Writer, Actor, ProductionCompany, Owned)
-VALUES ('$Title', '$Year', '$Director', '$Rating', '$Genre', '$Runtime', '$Writer', '$Actor', '$ProductionCompany', '$Owned')";
+$sql = "INSERT INTO movie (Title, Year, Director, Rating, Genre, Runtime, Writer, Actor, Country, Owned, imdbID)
+VALUES ('$Title', '$Year', '$Director', '$Rating', '$Genre', '$Runtime', '$Writer', '$Actor', '$Country', '$Owned', '$imdbID')";
 $sth=  DB::get()->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sth = DB::get()->exec($sql);
 header('Location: index.php');

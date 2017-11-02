@@ -4,7 +4,7 @@
 require 'db.class.php';
 $MovieID=$_GET['MovieID'];
 
-$sql = "SELECT Title, Year, Director, Rating, Genre, Runtime, Writer, Actor, ProductionCompany, Owned FROM movie Where MovieID = " .$MovieID;
+$sql = "SELECT Title, Year, Director, Rating, Genre, Runtime, Writer, Actor, Country, Owned, imdbID FROM movie Where MovieID = " .$MovieID;
 $result = DB::get()->query($sql);
     while($row = $result->fetch())
     {
@@ -16,8 +16,9 @@ $result = DB::get()->query($sql);
       $Runtime=$row["Runtime"];
       $Writer=$row["Writer"];
       $Actor=$row["Actor"];
-      $ProductionCompany=$row["ProductionCompany"];
+      $Country=$row["Country"];
       $Owned=$row["Owned"];
+      $imdbID=$row["imdbID"];
     }
     $result=null;
 ?>
@@ -51,7 +52,10 @@ $result = DB::get()->query($sql);
       <td>Actor:</td><td><input type='text' name='Actor' value='<?php echo $Actor; ?>'></td>
     </tr>
     <tr>
-      <td>Production Comapany:</td><td><input type='text' name='ProductionCompany'value='<?php echo $ProductionCompany; ?>'></td>
+      <td>Production Comapany:</td><td><input type='text' name='Country'value='<?php echo $Country; ?>'></td>
+    </tr>
+    <tr>
+      <td>IMDB Number:</td><td><input type='text' name='imdbID'value='<?php echo $imdbID; ?>'></td>
     </tr>
     <tr>
       <td>Is Movie Owned:</td><td><input type='checkbox' name='Owned' value='1'></td>
