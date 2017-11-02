@@ -1,8 +1,7 @@
 <?php
+  require 'db.class.php';
+  //get updated entrys from update.php
   $MovieID = $_GET['MovieID'];
-  $servername = "localhost";
-  $username = "root";
-  $password = "123456";
   $dbname="movie";
   $Title=$_GET["Title"];
   $Year=$_GET["Year"];
@@ -12,30 +11,17 @@
   $Runtime=$_GET["Runtime"];
   $Writer=$_GET["Writer"];
   $Actor=$_GET["Actor"];
+  $ProductionCompany=$_GET['ProductionCompany'];
+  $Owned=$GET['Owned'];
 
-  try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// sql to delete a record
+$sql ="UPDATE movie SET Title='$Title', Year='$Year', Director='$Director', Rating ='$Rating', Genre='$Genre', Runtime='$Runtime', Writer='$Writer', Actor='$Actor', ProductionCompany='$ProductionCompany', Owned='$Owned' WHERE MovieID = " . $MovieID;
 
-    // sql to delete a record
-    $sql ="UPDATE movie SET Title='$Title', Year='$Year', Director='$Director', Rating ='$Rating', Genre='$Genre', Runtime='$Runtime', Writer='$Writer', Actor='$Actor' WHERE MovieID = " . $MovieID;
-
-    // Prepare statement
-    $stmt = $conn->prepare($sql);
-
-    // execute the query
-    $stmt->execute();
-
-    // echo a message to say the UPDATE succeeded
-    //echo $stmt->rowCount() . " records UPDATED successfully";
-    header('Location: index.php');
-    }
-  catch(PDOException $e)
-    {
-    echo $sql . "<br>" . $e->getMessage();
-    }
-
+//open conn and update record
+$conn=DB::get()->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$stmt= DB::get()->prepare($sql);
+// execute the query
+$stmt->execute();
+header('Location: index.php');
 $conn = null;
-
 ?>

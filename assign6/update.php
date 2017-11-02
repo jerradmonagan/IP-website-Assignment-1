@@ -1,21 +1,12 @@
 <html>
 <head>
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "123456";
-$dbname="movie";
+require 'db.class.php';
 $MovieID=$_GET['MovieID'];
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error)
-{
-  die("Connection failed: " . $conn->connect_error);
-}
-$sql = "SELECT Title, Year, Director, Rating, Genre, Runtime, Writer, Actor, ProductionCompany FROM movie Where MovieID = " .$MovieID;
-$result = $conn->query($sql);
-    while($row = $result->fetch_assoc())
+
+$sql = "SELECT Title, Year, Director, Rating, Genre, Runtime, Writer, Actor, ProductionCompany, Owned FROM movie Where MovieID = " .$MovieID;
+$result = DB::get()->query($sql);
+    while($row = $result->fetch())
     {
       $Title=$row["Title"];
       $Year=$row["Year"];
@@ -26,8 +17,9 @@ $result = $conn->query($sql);
       $Writer=$row["Writer"];
       $Actor=$row["Actor"];
       $ProductionCompany=$row["ProductionCompany"];
+      $Owned=$row["Owned"];
     }
-    $conn->close();
+    $result=null;
 ?>
 </head>
 <body>
@@ -60,6 +52,9 @@ $result = $conn->query($sql);
     </tr>
     <tr>
       <td>Production Comapany:</td><td><input type='text' name='ProductionCompany'value='<?php echo $ProductionCompany; ?>'></td>
+    </tr>
+    <tr>
+      <td>Is Movie Owned:</td><td><input type='checkbox' name='Owned' value='1'></td>
     </tr>
     <tr>
       <td colspan='2'><input type='submit' value='Update Record' ></td>

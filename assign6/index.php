@@ -29,23 +29,14 @@
     <td>Rating:</td><td>
     <select name="Rating">
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "123456";
-    $dbname="movie";
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error)
-    {
-      die("Connection failed: " . $conn->connect_error);
-    }
+    require 'db.class.php';
     $sql = "SELECT Rating FROM rating";
-    $result = $conn->query($sql);
-    while ($row = $result->fetch_assoc())
+    $result = DB::get()->query($sql);
+    while ($row = $result->fetch())
     {
     echo '<option value="'.$row['Rating'].'">' . $row['Rating'] . "</option>";
     }
+    $result=null;
     ?>
     </select></td>
     </tr>
@@ -75,23 +66,17 @@
 </form>
 <form action='' method='get' name='myForm'>
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "123456";
-$dbname="movie";
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error)
-{
-  die("Connection failed: " . $conn->connect_error);
-}
+//get number of items in table
+$res = DB::get()->prepare('SELECT COUNT(*) FROM movie');
+$res->execute();
+$num_rows = $res->fetchColumn();
+
 $sql = "SELECT MovieID, Title, Year, Director, Rating, Genre, Runtime, Writer, Actor, ProductionCompany, Owned FROM movie";
-$result = $conn->query($sql);
-  if ($result->num_rows > 0) {
+$result =DB::get()->query($sql);
+  if ($num_rows > 0) {
     echo "<table border='1'>";
     echo '<tr><td></td><td>Title</td><td>Year</td><td>Director</td><td>Rating</td><td>Genre</td><td>Runtime</td><td>Writer</td><td>Actor</td><td>ProductionCompany</td><td>Owned</td></tr>';
-    while($row = $result->fetch_assoc())
+    while($row = $result->fetch())
     {
       $radio=$row["MovieID"];
       echo "<tr>";
@@ -105,14 +90,20 @@ $result = $conn->query($sql);
       echo "<td>".$row["Writer"]."</td>";
       echo "<td>".$row["Actor"]."</td>";
       echo "<td>". $row["ProductionCompany"]."</td>";
-      echo "<td>". $row["Owned"]."</td>";
+      if (($row['Owned'])>0)
+      {
+        echo "<td>Yes</td>";
+      }
+      else {
+        echo "<td>No</td>";
+      }
       echo "</tr>";
     }
     echo "</table>";
     } else {
     echo "0 results";
     }
-    $conn->close();
+    $result=null;
 ?>
 <input type='button' value='Delete Record' onClick='deleteRecord()'>
 <input type='button' value='Update Record' onClick='updateRecord()'>
