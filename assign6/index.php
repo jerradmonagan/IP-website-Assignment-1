@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Movie Info</title>
-    <link rel ="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.css">
+    <link rel ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css">
     <link rel ="stylesheet" href="css/style.css">
   <script>
   	function updateRecord()
@@ -23,7 +23,7 @@
   <nav class="navbar navbar-default">
     <div class="container">
       <div clas="navbar-header">
-      <a class="navbar-brand" href="/assign6/movieindex.html">Your Movie Database</a>
+      <a class="navbar-brand" href="../assign6/index.php">Your Movie Database</a>
       </div>
     </div>
   </nav>
@@ -74,10 +74,13 @@
       <td>Production Comapany:</td><td><input type='text' name='Country'></td>
     </tr>
     <tr>
-      <td>IMDB Number:</td><td><input type='text' name='imdbID'></td>
+      <td>IMDB Number (*required if you want poster):</td><td><input type='text' name='imdbID'></td>
     </tr>
     <tr>
       <td>Is Movie Owned:</td><td><input type='checkbox' value="1" name='Owned'></td>
+    </tr>
+    <tr>
+      <td>Add to Shopping Cart:</td><td><input type='radio' value="1" name='addToCart'></td>
     </tr>
     <tr>
       <td colspan='2'><input type='submit' value='Add Movie'></td>
@@ -92,11 +95,11 @@ $res = DB::get()->prepare('SELECT COUNT(*) FROM movie');
 $res->execute();
 $num_rows = $res->fetchColumn();
 
-$sql = "SELECT MovieID, Title, Year, Director, Rating, Genre, Runtime, Writer, Actor, Country, Owned, imdbID FROM movie";
+$sql = "SELECT MovieID, Title, Year, Director, Rating, Genre, Runtime, Writer, Actor, Country, Owned, imdbID, addToCart FROM movie";
 $result =DB::get()->query($sql);
   if ($num_rows > 0) {
     echo "<table border='1'>";
-    echo '<tr><td>Select</td><td></td><td>Title</td><td>Year</td><td>Director</td><td>Rating</td><td>Genre</td><td>Runtime</td><td>Writer</td><td>Actor</td><td>Country</td><td>IMDB #</td><td>Owned</td></tr>';
+    echo '<tr><td>Select</td><td></td><td>Title</td><td>Year</td><td>Director</td><td>Rating</td><td>Genre</td><td>Runtime</td><td>Writer</td><td>Actor</td><td>Country</td><td>IMDB #</td><td>In Shopping Cart</td><td>Owned</td></tr>';
     while($row = $result->fetch())
     {
 
@@ -104,11 +107,18 @@ $result =DB::get()->query($sql);
       $poster=$row["imdbID"];
       echo "<tr>";
       echo "<td><input type='radio' name='MovieID' value='$radio'></td>";
-      //echo '<script>alert("JavaScript is awesome!");</script>';
-      $api =file_get_contents('http://www.omdbapi.com?i='.$poster.'&apikey=yourapi');
-      $json = json_decode($api, true);
-      $moviePoster = $json['Poster'];
-      echo "<td><img src =". $moviePoster. "</td>";
+      //gets poster for each item in database to display
+      if($poster!=NULL)
+      {
+        $api =file_get_contents('http://www.omdbapi.com?i='.$poster.'&apikey=6bce83a9');
+        $json = json_decode($api, true);
+        $moviePoster = $json['Poster'];
+        echo "<td><img src =". $moviePoster. "</td>";
+      }//end if
+      else
+      {
+        echo "<td><img src ="."No img". "</td>";
+      }//end else
       echo "<td>".$row["Title"]."</td>";
       echo "<td>".$row["Year"]."</td>";
       echo "<td>".$row["Director"]."</td>";
@@ -119,6 +129,15 @@ $result =DB::get()->query($sql);
       echo "<td>".$row["Actor"]."</td>";
       echo "<td>". $row["Country"]."</td>";
       echo "<td>". $row["imdbID"]."</td>";
+      //if 1 print yes 0=no
+      if (($row['addToCart'])>0)
+      {
+        echo "<td>Yes</td>";
+      }
+      else {
+        echo "<td>No</td>";
+      }
+      //if 1 print yes 0=no
       if (($row['Owned'])>0)
       {
         echo "<td>Yes</td>";
@@ -136,7 +155,7 @@ $result =DB::get()->query($sql);
 ?>
 <input type='button' value='Delete Record' onClick='deleteRecord()'>
 <input type='button' value='Update Record' onClick='updateRecord()'>
-<button type="button"><a href="movieindex.html">Search OMDB Database</a></button>
+<a href="../assign6/movieindex.html" class ="button">Search OMDB Database</a></button>
 </form>
 </div>
 <script

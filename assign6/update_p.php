@@ -14,9 +14,10 @@
   $Country=$_GET['Country'];
   $Owned=$_GET['Owned'];
   $imdbID=$_GET['imdbID'];
+  $addToCart=$_GET['addToCart'];
 
 // sql to delete a record
-$sql ="UPDATE movie SET Title='$Title', Year='$Year', Director='$Director', Rating ='$Rating', Genre='$Genre', Runtime='$Runtime', Writer='$Writer', Actor='$Actor', Country='$Country', Owned='$Owned', imdbID='$imdbID' WHERE MovieID = " . $MovieID;
+$sql ="UPDATE movie SET Title='$Title', Year='$Year', Director='$Director', Rating ='$Rating', Genre='$Genre', Runtime='$Runtime', Writer='$Writer', Actor='$Actor', Country='$Country', Owned='$Owned', imdbID='$imdbID', addToCart='$addToCart' WHERE MovieID = " . $MovieID;
 
 //open conn and update record
 $conn=DB::get()->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

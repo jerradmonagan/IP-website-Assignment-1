@@ -12,10 +12,11 @@ $Actor=$_GET['Actor'];
 $Country=$_GET['Country'];
 $Owned=$_GET['Owned'];
 $imdbID=$_GET['imdbID'];
+$addToCart=$_GET['addToCart'];
 
 //insert new item into database
-$sql = "INSERT INTO movie (Title, Year, Director, Rating, Genre, Runtime, Writer, Actor, Country, Owned, imdbID)
-VALUES ('$Title', '$Year', '$Director', '$Rating', '$Genre', '$Runtime', '$Writer', '$Actor', '$Country', '$Owned', '$imdbID')";
+$sql = "INSERT INTO movie (Title, Year, Director, Rating, Genre, Runtime, Writer, Actor, Country, Owned, imdbID, addToCart)
+VALUES ('$Title', '$Year', '$Director', '$Rating', '$Genre', '$Runtime', '$Writer', '$Actor', '$Country', '$Owned', '$imdbID', '$addToCart')";
 $sth=  DB::get()->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sth = DB::get()->exec($sql);
 header('Location: index.php');

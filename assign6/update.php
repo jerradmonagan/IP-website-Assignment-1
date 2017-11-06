@@ -19,6 +19,7 @@ $result = DB::get()->query($sql);
       $Country=$row["Country"];
       $Owned=$row["Owned"];
       $imdbID=$row["imdbID"];
+      $addToCart=$row['addToCart'];
     }
     $result=null;
 ?>
@@ -59,6 +60,9 @@ $result = DB::get()->query($sql);
     </tr>
     <tr>
       <td>Is Movie Owned:</td><td><input type='checkbox' name='Owned' value='1'></td>
+    </tr>
+    <tr>
+      <td>Add to Shopping Cart:</td><td><input type='radio' name='addToCart' value='1'></td>
     </tr>
     <tr>
       <td colspan='2'><input type='submit' value='Update Record' ></td>
