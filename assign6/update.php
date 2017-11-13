@@ -59,10 +59,10 @@ $result = DB::get()->query($sql);
       <td>IMDB Number:</td><td><input type='text' name='imdbID'value='<?php echo $imdbID; ?>'></td>
     </tr>
     <tr>
-      <td>Is Movie Owned:</td><td><input type='checkbox' name='Owned' value='1'></td>
+      <td>Is Movie Owned:</td><td><input type='checkbox' name='Owned' value='1' ></td>
     </tr>
     <tr>
-      <td>Add to Shopping Cart:</td><td><input type='radio' name='addToCart' value='1'></td>
+      <td>Add to Shopping Cart:</td><td><input type='radio' name='addToCart' value='1' ></td>
     </tr>
     <tr>
       <td colspan='2'><input type='submit' value='Update Record' ></td>

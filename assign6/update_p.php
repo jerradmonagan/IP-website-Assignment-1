@@ -1,29 +1,30 @@
 <?php
   require 'db.class.php';
-  //get updated entrys from update.php
-  $MovieID = $_GET['MovieID'];
-  $dbname="movie";
-  $Title=$_GET["Title"];
-  $Year=$_GET["Year"];
-  $Director=$_GET["Director"];
-  $Rating=$_GET["Rating"];
-  $Genre=$_GET["Genre"];
-  $Runtime=$_GET["Runtime"];
-  $Writer=$_GET["Writer"];
-  $Actor=$_GET["Actor"];
-  $Country=$_GET['Country'];
-  $Owned=$_GET['Owned'];
-  $imdbID=$_GET['imdbID'];
-  $addToCart=$_GET['addToCart'];
 
-// sql to delete a record
-$sql ="UPDATE movie SET Title='$Title', Year='$Year', Director='$Director', Rating ='$Rating', Genre='$Genre', Runtime='$Runtime', Writer='$Writer', Actor='$Actor', Country='$Country', Owned='$Owned', imdbID='$imdbID', addToCart='$addToCart' WHERE MovieID = " . $MovieID;
+// not protected against sql injection
+//$sql ="UPDATE movie SET Title='$Title', Year='$Year', Director='$Director', Rating ='$Rating', Genre='$Genre', Runtime='$Runtime', Writer='$Writer', Actor='$Actor', Country='$Country', Owned='$Owned', imdbID='$imdbID', addToCart='$addToCart' WHERE MovieID = " . $MovieID;
 
-//open conn and update record
-$conn=DB::get()->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$stmt= DB::get()->prepare($sql);
+//open conn and update record to prevent sql injection
+$sth = DB::get()->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+$sth = DB::get()->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$sql = "UPDATE movie SET Title=:Title, Year=:Year, Director=:Director, Rating =:Rating, Genre=:Genre, Runtime=:Runtime, Writer=:Writer,
+Actor=:Actor, Country=:Country,Owned=:Owned, imdbID=:imdbID, addToCart=:addToCart WHERE MovieID =:MovieID";
+$sth = DB::get()->prepare($sql);
+$sth ->bindParam(':Title',$_GET['Title']);
+$sth ->bindParam(':Year',$_GET['Year']);
+$sth ->bindParam(':Director',$_GET['Director']);
+$sth ->bindParam(':Rating',$_GET['Rating']);
+$sth ->bindParam(':Genre',$_GET['Genre']);
+$sth ->bindParam(':Runtime',$_GET['Runtime']);
+$sth ->bindParam(':Writer',$_GET['Writer']);
+$sth ->bindParam(':Actor',$_GET['Actor']);
+$sth ->bindParam(':Country',$_GET['Country']);
+$sth ->bindParam(':Owned',$_GET['Owned']);
+$sth ->bindParam(':imdbID',$_GET['imdbID']);
+$sth ->bindParam(':addToCart',$_GET['addToCart']);
+$sth ->bindParam(':MovieID',$_GET['MovieID']);
+$sth ->execute();
 // execute the query
-$stmt->execute();
 header('Location: index.php');
-$conn = null;
+$sth = null;
 ?>

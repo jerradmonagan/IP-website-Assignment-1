@@ -24,6 +24,7 @@
     <div class="container">
       <div clas="navbar-header">
       <a class="navbar-brand" href="../assign6/index.php">Your Movie Database</a>
+        <a class="navbar-brand" href="../assign6/erd.html" target="_blank">Movie ERD</a>
       </div>
     </div>
   </nav>
@@ -85,9 +86,13 @@
     <tr>
       <td colspan='2'><input type='submit' value='Add Movie'></td>
     </tr>
+    <tr>
+      <td colspan='2'><a href="../assign6/movieindex.html" class ="button">Search OMDB Database</a></td>
+    </tr>
   </table>
   </form>
 </form>
+<div class="container col-md-12">
 <form action='' method='get' name='myForm'>
 <?php
 //get number of items in table
@@ -157,6 +162,7 @@ $result =DB::get()->query($sql);
 <input type='button' value='Update Record' onClick='updateRecord()'>
 <a href="../assign6/movieindex.html" class ="button">Search OMDB Database</a></button>
 </form>
+</div>
 </div>
 <script
 src="https://code.jquery.com/jquery-3.2.1.min.js"

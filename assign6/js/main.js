@@ -8,7 +8,7 @@ $(document).ready(()=>{
 
 function getMovies(searchText)
 {
-  axios.get('http://www.omdbapi.com?s='+searchText+'&apikey=yourapi')
+  axios.get('http://www.omdbapi.com?s='+searchText+'&apikey=6bce83a9')
   .then((response)=>{
     console.log(response);
     let movies =response.data.Search;
@@ -37,10 +37,11 @@ function movieSelected(id)
   window.location="movie.html";
   return false;
 }
+//used for information panel if needed
 function getMovie(movieId)
 {
     //let movieId=sessionStorage.getItem('movieId');
-    axios.get('http://www.omdbapi.com?i='+movieId+'&apikey=yourapi')
+    axios.get('http://www.omdbapi.com?i='+movieId+'&apikey=6bce83a9')
     .then((response)=>{
       console.log(response);
       let movie=response.data;
@@ -80,7 +81,7 @@ function getMovie(movieId)
 function addMovie()
 {
     let movieId=sessionStorage.getItem('movieId');
-    axios.get('http://www.omdbapi.com?i='+movieId+'&apikey=yourapi')
+    axios.get('http://www.omdbapi.com?i='+movieId+'&apikey=6bce83a9')
     .then((response)=>{
       console.log(response);
       let movie=response.data;
@@ -115,6 +116,9 @@ function addMovie()
         </tr>
         <tr>
           <td>IMDB Number:</td><td><input type='text' name='imdbID'value='${movie.imdbID}'></td>
+        </tr>
+        <tr>
+          <td>Add Movie to Shopping Cart:</td><td><input type='radio' name='addToCart' value='1'></td>
         </tr>
         <tr>
           <td>Is Movie Owned:</td><td><input type='checkbox' name='Owned' value='1'></td>
