@@ -50,10 +50,14 @@
     + [Part 4](#part-4)
     + [Part 5](#part-5)
     + [Grading Rubric](#grading-rubric-5)
+- [COP 4813/COP 5819: Internet Programming](#cop-4813-cop-5819--internet-programming-6)
+  * [Assignment 7](#assignment-7)
+  * [Delivery Instructions](#delivery-instructions-6)
+  * [Folder Structure](#folder-structure-6)
+  * [Specifications](#specifications-2)
+  * [Grading Rubric](#grading-rubric-6)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
 
 # COP 4813/COP 5819: Internet Programming
 ## Assignment 1
@@ -326,5 +330,27 @@ Create a web application that will allow a user to update records within this ta
 Search online about SQL injection, which is an extremely important topic. Modify your code so that users of this site cannot potentially damage your database structure by thwarting SQL injection. Describe how you address this in the text file you submit.
 
 ### Grading Rubric
+
+This assignment will be evaluated using a 100 point scale.  Each of the specifications will be worth a varying number of points.  If you do not understand any of the specifications, post immediately to the discussion board on Canvas.  As long as you meet all the specifications, you should receive full credit.  Late assignments will not be accepted.
+
+# COP 4813/COP 5819: Internet Programming
+
+## Assignment 7
+
+## Delivery Instructions
+
+After completing the assignment, you are to submit a file containing a link to the assignment on the server. Additionally, the file should contain links to any resources (backgrounds, images, graphics, etc) that you found on the Internet that were used in this assignment.
+
+## Folder Structure
+
+1. **http://server /~Nnumber/cop4819 /index.html** - Update ePortfolio page with your assignment description, reflection and learning objectives.
+2. **http:// server /~Nnumber/cop4819/assign7/index.php** - The location for AJAX application.
+
+
+## Specifications
+
+The purpose of this assignment is to expose you to the basics of AJAX. This assignment is smaller than previous assignments as you have to work on your final group projects. Using the simple table you created in assignment 6, create a small AJAX application that will filter the responses based on a user action. For example, you might include a drop down that when changed, filters the records based on the user selection. Alternatively, you might use a textbox to filter records based on what information the user provides within the textbox. Regardless, you must employ a combination of JavaScript and PHP to accomplish this task. You must use the AJAX technique to accomplish this goal.
+
+## Grading Rubric
 
 This assignment will be evaluated using a 100 point scale.  Each of the specifications will be worth a varying number of points.  If you do not understand any of the specifications, post immediately to the discussion board on Canvas.  As long as you meet all the specifications, you should receive full credit.  Late assignments will not be accepted.
