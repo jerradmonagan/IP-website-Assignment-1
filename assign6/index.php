@@ -17,6 +17,43 @@
       document.myForm.action='delete.php';
       document.myForm.submit();
     }
+    function ajaxFunction(){
+	  var ajaxRequest;  // The variable that makes Ajax possible!
+	  try
+    {
+		    // Opera 8.0+, Firefox, Safari
+		      ajaxRequest = new XMLHttpRequest();
+	  } catch (e)
+    {
+		// Internet Explorer Browsers
+		try
+    {
+			ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+		} catch (e)
+    {
+			try
+      {
+				ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+			} catch (e)
+      {
+				// Something went wrong
+				alert("Your browser broke!");
+				return false;
+			}
+		}
+	}
+	// Create a function that will receive data sent from the server
+	ajaxRequest.onreadystatechange = function()
+  {
+		if(ajaxRequest.readyState == 4)
+    {
+			document.getElementById("output").innerHTML = ajaxRequest.responseText;
+		}
+	}
+	var selection = document.myAjaxForm.listMovies.value;
+  ajaxRequest.open("GET", "getData.php?selection=" + selection, true);
+	ajaxRequest.send(null);
+}
   </script>
 </head>
 <body>
@@ -91,9 +128,35 @@
     </tr>
   </table>
   </form>
+<div>
+  <form name='myAjaxForm'>
+<select name="listMovies" onChange="ajaxFunction()">
+<?php
+  $sth = DB::get()->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+  $sth = DB::get()->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $sth = DB::get()->prepare("select MovieID, Title, Year from Movie");
+  $sth ->execute();
+  while($row = $sth->fetch())
+  {
+    $MovieID=$row["MovieID"];
+    $Title=$row["Title"];
+    $Year=$row["Year"];
+    echo "<option value='$MovieID'>$Title $Year</option>";
+  }
+  $result=null;
+?>
+</select>
 </form>
+</div>
+<div class="container col-md-12 row" id="movies">
+<form action="" method="get" name="myForm">
+<p id="output"></p>
+<table class="table"><tr>
+<td><input type="button" value="Delete Record" onClick="deleteRecord()"></td>
+<td><input type="button" value="Update Record" onClick="updateRecord()"></td>
+</table></tr>
+</div>
 <div class="container col-md-12">
-<form action='' method='get' name='myForm'>
 <?php
 //get number of items in table
 $res = DB::get()->prepare('SELECT COUNT(*) FROM movie');
