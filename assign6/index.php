@@ -134,7 +134,7 @@
 <?php
   $sth = DB::get()->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
   $sth = DB::get()->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $sth = DB::get()->prepare("select MovieID, Title, Year from Movie");
+  $sth = DB::get()->prepare("select MovieID, Title, Year from movie");
   $sth ->execute();
   while($row = $sth->fetch())
   {
