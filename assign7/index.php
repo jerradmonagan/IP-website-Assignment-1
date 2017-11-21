@@ -60,8 +60,8 @@
   <nav class="navbar navbar-default">
     <div class="container">
       <div clas="navbar-header">
-      <a class="navbar-brand" href="../assign6/index.php">Your Movie Database</a>
-        <a class="navbar-brand" href="../assign6/erd.html" target="_blank">Movie ERD</a>
+      <a class="navbar-brand" href="../assign7/index.php">Your Movie Database</a>
+        <a class="navbar-brand" href="../assign7/erd.html" target="_blank">Movie ERD</a>
       </div>
     </div>
   </nav>
@@ -124,7 +124,7 @@
       <td colspan='2'><input type='submit' value='Add Movie'></td>
     </tr>
     <tr>
-      <td colspan='2'><a href="../assign6/movieindex.html" class ="button">Search OMDB Database</a></td>
+      <td colspan='2'><a href="../assign7/movieindex.html" class ="button">Search OMDB Database</a></td>
     </tr>
   </table>
   </form>
@@ -223,7 +223,7 @@ $result =DB::get()->query($sql);
 ?>
 <input type='button' value='Delete Record' onClick='deleteRecord()'>
 <input type='button' value='Update Record' onClick='updateRecord()'>
-<a href="../assign6/movieindex.html" class ="button">Search OMDB Database</a></button>
+<a href="../assign7/movieindex.html" class ="button">Search OMDB Database</a></button>
 </form>
 </div>
 </div>
